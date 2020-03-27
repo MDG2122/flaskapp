@@ -239,6 +239,14 @@ def ordenarmenoramayor(arreglo1, arreglo2):
                         posiciondelmin = k
                 xxord[j, posiciondelmin] = xxord[j, numrecorrido]
                 xxord[j, numrecorrido] = minimo
+                if j == 22:
+                    print('wtf')
+                    print(ultimafila)
+                    print(i)
+                auxiliar = x3ord[j, posiciondelmin]
+                x3ord[j, posiciondelmin] = x3ord[j, numrecorrido]
+                x3ord[j, numrecorrido] = auxiliar
+                numrecorrido = numrecorrido+1
                 # auxiliar=yord[i,posiciondelmin]
                 # yord[i,posiciondelmin]=yord[i,numrecorrido]
                 # yord[i,numrecorrido]=auxiliar
@@ -255,20 +263,26 @@ def imprimirtrimestres(xx,metadata,x2):
     for i in range(xx.shape[0]):
         listaaux=[]
         if np.count_nonzero(xx[i])!=0:
-            if np.count_nonzero(xx[i+1])!=0:
-                trimestre=trimestre+1
-                listaaux.append('Trimestre: '+str(trimestre))
-                for j in range(xx.shape[1]):
-                    if xx[i,j]!=0:
-                        listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' nota: '+str(x2[i,j]))
-            else:
-                listaaux.append('Trimestre a predecir')
-                for j in range(xx.shape[1]):
-                    if xx[i,j]!=0:
-                        listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0]))
+            trimestre=trimestre+1
+            listaaux.append('Trimestre: '+str(trimestre))
+            for j in range(xx.shape[1]):
+                if xx[i,j]!=0:
+                    listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' nota: '+str(x2[i,j]))    
+
             lista.append(listaaux)
     
     return lista
+
+def obtenernummat(xx):
+    xx=xx
+    ultimapos=-1
+    x3=np.zeros((1,7))
+    for i in range(xx.shape[0]):
+        if np.count_nonzero(xx[i])!=0:
+            ultimapos=i
+    nummat=np.count_nonzero(xx[ultimapos])
+    x3[0,nummat-1]=1
+    return x3
 
 
 

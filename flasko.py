@@ -4,7 +4,7 @@ from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 import pandas as pd
 from datos import listacodigos,codigosynbombres
-from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres
+from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat
 #os.environ['TIKA_SERVER_JAR'] = 'https://repo1.maven.org/maven2/org/apache/tika/tika-server/1.19/tika-server-1.19.jar'
 import tika
 tika.initVM()
@@ -85,8 +85,12 @@ def upload_file():
 			xx,x2=buscar3(hist,listacodigos,metadata,codigosynbombres)
 
 			#x2=cambiarformato(x2)
-			
+			print(xx)
+			print(x2)
 			xx,x2=ordenarmenoramayor(xx,x2)
+			print(xx)
+			print(x2)
+			x3=obtenernummat(xx)
 			lista=imprimirtrimestres(xx,metadata,x2)
 			matynotas = lista
 			return render_template('showdata1.html',matynotas=matynotas)
