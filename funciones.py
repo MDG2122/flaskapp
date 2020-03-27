@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 
 
+
 def buscar3(historico, codigosmateria, metadata, codigosynbombres):
     xx = np.zeros((23, 7))
     x2 = np.zeros((23, 7))
@@ -244,3 +245,32 @@ def ordenarmenoramayor(arreglo1, arreglo2):
                 numrecorrido = numrecorrido+1
 
     return xxord, x3ord  # ,yord
+
+def imprimirtrimestres(xx,metadata,x2):
+    xx=xx
+    lista=[]
+    metadata=metadata
+    trimestre=0
+
+    for i in range(xx.shape[0]):
+        listaaux=[]
+        if np.count_nonzero(xx[i])!=0:
+            if np.count_nonzero(xx[i+1])!=0:
+                trimestre=trimestre+1
+                listaaux.append('Trimestre: '+str(trimestre))
+                for j in range(xx.shape[1]):
+                    if xx[i,j]!=0:
+                        listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' nota: '+str(x2[i,j]))
+            else:
+                listaaux.append('Trimestre a predecir')
+                for j in range(xx.shape[1]):
+                    if xx[i,j]!=0:
+                        listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0]))
+            lista.append(listaaux)
+    
+    return lista
+
+
+
+
+        
