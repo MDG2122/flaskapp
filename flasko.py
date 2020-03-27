@@ -85,12 +85,9 @@ def upload_file():
 			xx,x2=buscar3(hist,listacodigos,metadata,codigosynbombres)
 
 			#x2=cambiarformato(x2)
-			print(xx)
-			print(x2)
 			xx,x2=ordenarmenoramayor(xx,x2)
-			print(xx)
-			print(x2)
-			x3=obtenernummat(xx)
+
+			#x3=obtenernummat(xx)
 			lista=imprimirtrimestres(xx,metadata,x2)
 			matynotas = lista
 			return render_template('showdata1.html',matynotas=matynotas)
