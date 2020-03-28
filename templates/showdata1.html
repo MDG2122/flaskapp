@@ -1,12 +1,54 @@
 <!doctype html>
-  <head>
-    <title>materias</title>
-    <script>
-        var bot1 = { bot1 }
-    </script>
-  </head>
-  <body>
-      <form method='post'>
-        materias por trimestre: {{ matynotas }}
-      </form>
-  </body>
+
+<head>
+  <title>materias</title>
+  <script>
+    var bot1 = { bot1 }
+  </script>
+</head>
+
+<body>
+  <form method='post'>
+    materias por trimestre: {{ matynotas }}
+  </form>
+</body>
+<fieldset>
+  <legend>Seleccione las materias que ha retirado</legend>
+  <p>
+
+    <label>Seleccione cuantas materias ha retirado en su carrera</label>
+    <form>
+      <input type="number" name="matRetiradas" id="matRetiradas">
+      <input type="submit" value="Submit">
+    </form>
+    <tr>
+      <th>
+
+        <label>Seleccione trimestre</label>
+        <select id="mytrimestre">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+      </th>
+      <th>
+        <label>Seleccione materia</label>
+        <select id="myMateria">
+          <option value="1">one</option>
+          <option value="2">two</option>
+          <option value="3">three</option>
+          <option value="4">four</option>
+        </select>
+      </th>
+    </tr>
+  </p>
+</fieldset>

@@ -1,24 +1,86 @@
 <!doctype html>
+<html lang="en">
 <title>Python Flask File Upload Example</title>
 <h2>Select a file to upload</h2>
 <p>
 	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-		<ul class=flashes>
+	{% if messages %}
+	<ul class=flashes>
 		{% for message in messages %}
-		  <li>{{ message }}</li>
+		<li>{{ message }}</li>
 		{% endfor %}
-		</ul>
-	  {% endif %}
+	</ul>
+	{% endif %}
 	{% endwith %}
 </p>
 <form method="post" action="/" enctype="multipart/form-data">
-    <dl>
+	<dl>
 		<p>
 			<input type="file" name="file" autocomplete="off" required>
 		</p>
-    </dl>
-    <p>
+	</dl>
+	<p>
 		<input type="submit" value="Submit">
 	</p>
 </form>
+
+<body>
+	<form>
+
+		<div>
+			<br>
+			<br>
+			<br>
+		</div>
+		<fieldset>
+			<legend>Seleccione las materias que va a inscribir este trimestre</legend>
+			<p>
+				<label>Seleccione cantidad de materias a inscribir</label>
+				<select id="myMateria">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+				</select>
+				<br>
+				<br>
+				<br>
+				<label>Seleccione nombre de las materias a inscribir</label>
+				 <ul>
+					<li *ng-repeat="item in items; let i = myMateria.value">
+						<label>Seleccione materia</label>
+						<!--<select [(ngModel)]="listacodigos">
+							<option *ngFor="listacodigo of listacodigos" [value]="listacodigos">
+								{{listacodigos}}</option>
+						</select>\-->
+					</li>
+				</ul>
+			</p>
+			<td ng-controller="myCtrl" >
+				<select>
+				 <td ng-repeat="(x, y) in myObj">
+				  <option value ="1">{{x}}</option>
+				  <option value = "2">{{y}}</option>  
+				 </td>
+				</select>
+				</td>
+				
+				<script>
+				var app = angular.module("myApp", []);
+				app.controller("myCtrl", function($scope) {
+				  $scope.myObj = {
+					"Codigo" : "FPTSP00"
+				
+				  }
+				});
+				</script>
+		</fieldset>
+
+
+	</form>
+</body>
+
+</html>
