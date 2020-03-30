@@ -4,11 +4,12 @@ from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 import pandas as pd
 from datos import listacodigos,codigosynbombres
-from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat
+from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred
 #os.environ['TIKA_SERVER_JAR'] = 'https://repo1.maven.org/maven2/org/apache/tika/tika-server/1.19/tika-server-1.19.jar'
 import tika
 tika.initVM()
 from tika import parser
+#import numpy as np
 metadata =pd.read_csv('static/metadata.csv',header=None)
 
 UPLOAD_FOLDER = 'static'
@@ -76,6 +77,9 @@ def upload_file():
 			filename = secure_filename("historico.pdf")
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			#FileName = open('static/historico.pdf', 'rb')
+			pred=request.form['array']
+			#apred=np.asarray(array)
+			#print((apred))
 			
 			PDF_Parse = parser.from_file('static/historico.pdf')
 			
@@ -83,10 +87,13 @@ def upload_file():
 			hist=hist.split()
 			
 			xx,x2=buscar3(hist,listacodigos,metadata,codigosynbombres)
+			
+			xx=incluirpred(xx,pred)
+			print(xx)
 
 			#x2=cambiarformato(x2)
 			xx,x2=ordenarmenoramayor(xx,x2)
-
+			print(xx)
 			#x3=obtenernummat(xx)
 			lista=imprimirtrimestres(xx,metadata,x2)
 			matynotas = lista

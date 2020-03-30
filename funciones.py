@@ -209,7 +209,7 @@ def ordenarmenoramayor(arreglo1, arreglo2):
             ultimafila = j
 
     for j in range(23):
-        if j != ultimafila and j != 22 and np.count_nonzero(xxord[j]) > 0:
+        if  j != 22 and np.count_nonzero(xxord[j]) > 0:
             numrecorrido = 0
             while(numrecorrido < 7):
                 minimo = 100
@@ -220,14 +220,11 @@ def ordenarmenoramayor(arreglo1, arreglo2):
                         posiciondelmin = k
                 xxord[j, posiciondelmin] = xxord[j, numrecorrido]
                 xxord[j, numrecorrido] = minimo
-                if j == 22:
-                    print('wtf')
-                    print(ultimafila)
-                    print(i)
                 auxiliar = x3ord[j, posiciondelmin]
                 x3ord[j, posiciondelmin] = x3ord[j, numrecorrido]
                 x3ord[j, numrecorrido] = auxiliar
                 numrecorrido = numrecorrido+1
+                '''
         elif j == ultimafila:
             numrecorrido = 0
             while(numrecorrido < 7):
@@ -250,7 +247,7 @@ def ordenarmenoramayor(arreglo1, arreglo2):
                 # auxiliar=yord[i,posiciondelmin]
                 # yord[i,posiciondelmin]=yord[i,numrecorrido]
                 # yord[i,numrecorrido]=auxiliar
-                numrecorrido = numrecorrido+1
+                numrecorrido = numrecorrido+1'''
 
     return xxord, x3ord  # ,yord
 
@@ -262,13 +259,18 @@ def imprimirtrimestres(xx,metadata,x2):
 
     for i in range(xx.shape[0]):
         listaaux=[]
-        if np.count_nonzero(xx[i])!=0:
+        if np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])!=0:
             trimestre=trimestre+1
             listaaux.append('Trimestre: '+str(trimestre))
             for j in range(xx.shape[1]):
                 if xx[i,j]!=0:
                     listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' nota: '+str(x2[i,j]))    
-
+            lista.append(listaaux)
+        elif np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])==0:
+            listaaux.append('Trimestre a predecir:')
+            for j in range(xx.shape[1]):
+                if xx[i,j]!=0:
+                    listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' ')  
             lista.append(listaaux)
     
     return lista
@@ -283,6 +285,20 @@ def obtenernummat(xx):
     nummat=np.count_nonzero(xx[ultimapos])
     x3[0,nummat-1]=1
     return x3
+
+def incluirpred(x1,pred):
+    x1=x1
+    pred = pred.split(",")
+    pred=np.asarray(pred)
+    ultimtrim=0
+
+    for i in range(x1.shape[0]):
+        if np.count_nonzero(x1[i])!=0:
+            ultimtrim=i
+    x1[ultimtrim+1]=pred
+    return x1
+    
+
 
 
 
