@@ -209,7 +209,7 @@ def ordenarmenoramayor(arreglo1, arreglo2):
             ultimafila = j
 
     for j in range(23):
-        if  j != 22 and np.count_nonzero(xxord[j]) > 0:
+        if np.count_nonzero(xxord[j]) > 0:
             numrecorrido = 0
             while(numrecorrido < 7):
                 minimo = 100
