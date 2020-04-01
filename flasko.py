@@ -1,10 +1,12 @@
 import os
 import urllib.request
-from flask import Flask, flash, request, redirect, render_template
+from flask import Flask, flash, request, redirect, render_template, url_for,session
 from werkzeug.utils import secure_filename
 import pandas as pd
 from datos import listacodigos,codigosynbombres
-from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred
+from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred,incluirreti
+import json
+import numpy as np
 #os.environ['TIKA_SERVER_JAR'] = 'https://repo1.maven.org/maven2/org/apache/tika/tika-server/1.19/tika-server-1.19.jar'
 import tika
 tika.initVM()
@@ -21,6 +23,12 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 ALLOWED_EXTENSIONS = set(['pdf'])
+
+class NumpyEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return json.JSONEncoder.default(self, obj)
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -89,22 +97,59 @@ def upload_file():
 			xx,x2=buscar3(hist,listacodigos,metadata,codigosynbombres)
 			
 			xx=incluirpred(xx,pred)
-			print(xx)
 
 			#x2=cambiarformato(x2)
 			xx,x2=ordenarmenoramayor(xx,x2)
-			print(xx)
 			#x3=obtenernummat(xx)
 			lista=imprimirtrimestres(xx,metadata,x2)
 			matynotas = lista
-			return render_template('showdata1.html',matynotas=matynotas)
+			#print(matynotas)
+			#return redirect("/materias")
+			json_dump = json.dumps({'xx': xx, 'x2': x2}, cls=NumpyEncoder)
+			session['json'] = json_dump
+			#session['x2'] = x2
+			session['matynotas'] = matynotas
+			return redirect(url_for('.prueba', matynotas=matynotas, json_dump=json_dump))
+			#prueba(xx,x2,matynotas)
+			#if request.method == 'POST':
+
+			#return render_template('showdata1.html',matynotas=matynotas)
+			#retiradas=request.form['arreglo']
+			#print(retiradas)
 			#flash('File successfully uploaded')
 			#return redirect('/')
 			#return xx,x2
 		else:
 			flash('Allowed file is  pdf')
 			return redirect(request.url)
-        
+
+
+@app.route('/materia')
+def prueba():
+	matynotas=session['matynotas']
+	return render_template('showdata1.html',matynotas=matynotas)
+
+
+@app.route('/materia', methods=['POST'])
+def prueba2():
+	if request.method == 'POST':
+		json_dump=session['json']
+		json_load = json.loads(json_dump)
+		xx = np.asarray(json_load["xx"])
+		x2 = np.asarray(json_load["x2"])
+		retiradas=request.form['arreglo']
+		x1,x2=incluirreti(xx,x2,retiradas)
+		x1,x2=ordenarmenoramayor(xx,x2)
+		lista=imprimirtrimestres(x1,metadata,x2)
+		matynotas = lista
+		print(x1)
+		print(x2)
+		return render_template('/showdata1.html',matynotas=matynotas)
+	
+
+
+
+
 
 
 if __name__ == '__main__':  
