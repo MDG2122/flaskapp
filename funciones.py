@@ -264,7 +264,11 @@ def imprimirtrimestres(xx,metadata,x2):
             listaaux.append('Trimestre: '+str(trimestre))
             for j in range(xx.shape[1]):
                 if xx[i,j]!=0:
-                    listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' nota: '+str(x2[i,j]))    
+                    if x2[i,j]!=0.1:
+                        listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' nota: '+str(x2[i,j]))    
+                    elif x2[i,j]==0.1:
+                        listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' nota: Retirada')
+
             lista.append(listaaux)
         elif np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])==0:
             listaaux.append('Trimestre a predecir:')
@@ -297,6 +301,23 @@ def incluirpred(x1,pred):
             ultimtrim=i
     x1[ultimtrim+1]=pred
     return x1
+
+def incluirreti(x1,x2,retiradas):
+    x1=x1
+    x2=x2
+    retiradas = retiradas.split(",")
+    retiradas=np.asarray(retiradas)
+    for i in range(retiradas.shape[0]):
+        if i%2==0 or i==0 and i<=retiradas.shape[0]-1:
+            if retiradas[i+1]!=0:
+                cuenta=np.count_nonzero(x1[int(retiradas[i])-1])
+                cuenta=6-cuenta
+                print(cuenta)
+                x1[int(retiradas[i])-1,cuenta]=int(retiradas[i+1])
+                x2[int(retiradas[i])-1,cuenta]=0.1
+
+
+    return x1,x2
     
 
 
