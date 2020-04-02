@@ -105,10 +105,12 @@ def upload_file():
 			matynotas = lista
 			#print(matynotas)
 			#return redirect("/materias")
-			json_dump = json.dumps({'xx': xx, 'x2': x2}, cls=NumpyEncoder)
+			x3=obtenernummat(xx)
+			json_dump = json.dumps({'xx': xx, 'x2': x2, 'x3':x3}, cls=NumpyEncoder)
 			session['json'] = json_dump
 			#session['x2'] = x2
 			session['matynotas'] = matynotas
+			print(x3)
 			return redirect(url_for('.prueba', matynotas=matynotas, json_dump=json_dump))
 			#prueba(xx,x2,matynotas)
 			#if request.method == 'POST':
@@ -137,6 +139,7 @@ def prueba2():
 		json_load = json.loads(json_dump)
 		xx = np.asarray(json_load["xx"])
 		x2 = np.asarray(json_load["x2"])
+		x3 = np.asarray(json_load["x3"])
 		retiradas=request.form['arreglo']
 		x1,x2=incluirreti(xx,x2,retiradas)
 		x1,x2=ordenarmenoramayor(xx,x2)
@@ -144,6 +147,8 @@ def prueba2():
 		matynotas = lista
 		print(x1)
 		print(x2)
+		print(x3)
+	
 		return render_template('/showdata1.html',matynotas=matynotas)
 	
 
