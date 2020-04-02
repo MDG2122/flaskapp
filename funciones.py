@@ -309,10 +309,9 @@ def incluirreti(x1,x2,retiradas):
     retiradas=np.asarray(retiradas)
     for i in range(retiradas.shape[0]):
         if i%2==0 or i==0 and i<=retiradas.shape[0]-1:
-            if retiradas[i+1]!=0:
+            if int(retiradas[i+1])!=0:
                 cuenta=np.count_nonzero(x1[int(retiradas[i])-1])
                 cuenta=6-cuenta
-                print(cuenta)
                 x1[int(retiradas[i])-1,cuenta]=int(retiradas[i+1])
                 x2[int(retiradas[i])-1,cuenta]=0.1
 

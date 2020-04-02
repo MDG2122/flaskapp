@@ -141,13 +141,14 @@ def prueba2():
 		x2 = np.asarray(json_load["x2"])
 		x3 = np.asarray(json_load["x3"])
 		retiradas=request.form['arreglo']
+		print(retiradas)
 		x1,x2=incluirreti(xx,x2,retiradas)
 		x1,x2=ordenarmenoramayor(xx,x2)
 		lista=imprimirtrimestres(x1,metadata,x2)
 		matynotas = lista
 		print(x1)
 		print(x2)
-		print(x3)
+		#print(x3)
 	
 		return render_template('/showdata1.html',matynotas=matynotas)
 	
