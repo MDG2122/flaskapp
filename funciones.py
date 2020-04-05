@@ -309,10 +309,9 @@ def incluirreti(x1,x2,retiradas):
     retiradas=np.asarray(retiradas)
     for i in range(retiradas.shape[0]):
         if i%2==0 or i==0 and i<=retiradas.shape[0]-1:
-            if retiradas[i+1]!=0:
+            if int(retiradas[i+1])!=0:
                 cuenta=np.count_nonzero(x1[int(retiradas[i])-1])
                 cuenta=6-cuenta
-                print(cuenta)
                 x1[int(retiradas[i])-1,cuenta]=int(retiradas[i+1])
                 x2[int(retiradas[i])-1,cuenta]=0.1
 
@@ -321,6 +320,27 @@ def incluirreti(x1,x2,retiradas):
     
 
 
+def darprediccion(xx,metadata,x3,prediccion):
+    xx=xx
+    x3=x3
+    metadata=metadata
+    prediccion=prediccion
+    listaaux=[]
+    prediccion
+    for i in range(7):
+        if x3[0,i]==1:
+            nummaterias=i+1
+    for i in range(23):
+        if np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])==0:
+            ultimotrim=xx[i]
+    print(ultimotrim.shape)
+    print(prediccion.shape)
+    for j in range(7-nummaterias,7):
+        listaaux.append('materia: '+str(metadata.iloc[int(ultimotrim[j]-1)][0])+' proababilidad de nota mayor a 12: '+str(prediccion[0,j]))
+
+
+
+    return listaaux
 
 
 
