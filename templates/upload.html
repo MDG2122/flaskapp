@@ -58,11 +58,11 @@
 			<legend>Seleccione las materias que va a inscribir este trimestre</legend>
 			<p>
 
-				<label>Seleccione nombre de las materias a inscribir</label>
+				<label>Seleccione cantidad de materias a inscribir (Entre 1 y 7 materias)</label>
 
 				<ul>
 
-					<input type="text" name="mataPredecir" id="mataPredecir">
+					<input type="number" min="1" max="7" name="mataPredecir" id="mataPredecir" required>
 					<p>
 						<input type="button" value="Aceptar" onclick="javascript:mostrarMat()">
 					</p>

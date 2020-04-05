@@ -55,9 +55,9 @@
     <legend>Seleccione las materias que ha retirado</legend>
     <p>
 
-      <label>Seleccione cuantas materias ha retirado en su carrera</label>
+      <label>Seleccione cuantas materias ha retirado en su carrera. El periodo intensivo cuenta como trimestre (Entre 1 y 10 materias)</label>
       <ul>
-        <input type="text" name="matRetiradas" id="matRetiradas">
+        <input type="number"  min="1" max="10" name="matRetiradas" id="matRetiradas" required>
         <input type="button" value="Aceptar" onclick="javascript:mostrar()">
         <div id="content1" style="display: none;">
 
