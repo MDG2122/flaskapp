@@ -342,6 +342,27 @@ def darprediccion(xx,metadata,x3,prediccion):
 
     return listaaux
 
+def darprediccion2(xx,metadata,x3,prediccion):
+    xx=xx
+    x3=x3
+    metadata=metadata
+    prediccion=prediccion
+    listaaux=[]
+    prediccion
+    for i in range(7):
+        if x3[0,i]==1:
+            nummaterias=i+1
+    for i in range(23):
+        if np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])==0:
+            ultimotrim=xx[i]
+    #print(ultimotrim.shape)
+    #print(prediccion.shape)
+    for j in range(7-nummaterias,7):
+        listaaux.append('materia: '+str(metadata.iloc[int(ultimotrim[j]-1)][0])+' proababilidad de nota mayor a 10: '+str(prediccion[0,j]))
+
+
+
+    return listaaux
 
 def validar1(xx,pred,x2):
     xx=xx
