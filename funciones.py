@@ -434,7 +434,7 @@ def validar5(x1,retiradas,x2):
             if int(retiradas[i+1])!=0 and int(retiradas[i+1])!=19 and int(retiradas[i+1])!=59:
                 for p in range(x1.shape[0]):
                     for t in range(x1.shape[1]):
-                        if x1[p,t]==int(retiradas[i+1]) and x2[p,t]>=10 and p<int(retiradas[i+1])-1:
+                        if x1[p,t]==int(retiradas[i+1]) and x2[p,t]>=10 and p<int(retiradas[i])-1:
                             error=True
     return error
 
