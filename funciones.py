@@ -342,6 +342,27 @@ def darprediccion(xx,metadata,x3,prediccion):
 
     return listaaux
 
+def darprediccion2(xx,metadata,x3,prediccion):
+    xx=xx
+    x3=x3
+    metadata=metadata
+    prediccion=prediccion
+    listaaux=[]
+    prediccion
+    for i in range(7):
+        if x3[0,i]==1:
+            nummaterias=i+1
+    for i in range(23):
+        if np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])==0:
+            ultimotrim=xx[i]
+    #print(ultimotrim.shape)
+    #print(prediccion.shape)
+    for j in range(7-nummaterias,7):
+        listaaux.append('materia: '+str(metadata.iloc[int(ultimotrim[j]-1)][0])+' proababilidad de nota mayor a 10: '+str(prediccion[0,j]))
+
+
+
+    return listaaux
 
 def validar1(xx,pred,x2):
     xx=xx
@@ -413,16 +434,7 @@ def validar5(x1,retiradas,x2):
             if int(retiradas[i+1])!=0 and int(retiradas[i+1])!=19 and int(retiradas[i+1])!=59:
                 for p in range(x1.shape[0]):
                     for t in range(x1.shape[1]):
-                        if x1[p,t]==int(retiradas[i+1]) and x2[p,t]>=10 and p<int(retiradas[i+1])-1:
+                        if x1[p,t]==int(retiradas[i+1]) and x2[p,t]>=10 and p<int(retiradas[i])-1:
                             error=True
     return error
-
-
-
-
-
-
-
-
-
-
+    

@@ -4,7 +4,7 @@ from flask import Flask, flash, request, redirect, render_template, url_for,sess
 from werkzeug.utils import secure_filename
 import pandas as pd
 from datos import listacodigos,codigosynbombres
-from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred,incluirreti,darprediccion,validar1,validar2,validar3,validar4,validar5
+from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred,incluirreti,darprediccion,validar1,validar2,validar3,validar4,validar5,darprediccion2
 import json
 import numpy as np
 #os.environ['TIKA_SERVER_JAR'] = 'https://repo1.maven.org/maven2/org/apache/tika/tika-server/1.19/tika-server-1.19.jar'
@@ -55,6 +55,8 @@ class NonMasking(Layer):
 
 model = load_model('model07158acc.h5',custom_objects={'MultiHeadAttention': MultiHeadAttention,'LayerNormalization':LayerNormalization,'NonMasking':NonMasking})
 model._make_predict_function()
+model2=load_model('model07243acc.h5',custom_objects={'MultiHeadAttention': MultiHeadAttention,'LayerNormalization':LayerNormalization,'NonMasking':NonMasking})
+model2._make_predict_function()
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 	
@@ -82,17 +84,14 @@ def upload_form():
 			hist=hist.split()
 			
 			xx,x2=buscar3(hist,listacodigos,metadata,codigosynbombres)
-
 			#x2=cambiarformato(x2)
 			
 			xx,x2=ordenarmenoramayor(xx,x2)
 			bot=xx
 			return redirect('showdata1.html',bot1=bot)
-
 		else:
 			flash('Allowed file is  pdf')
 			return redirect(request.url)
-
 '''
 
 @app.route('/', methods=['POST'])
@@ -185,13 +184,15 @@ def prueba2():
 			x2=np.reshape(x2,(1,23*7,1))
 			x3=np.reshape(x3,((1,7)))
 			pred=model.predict({'inputA':x1,'inputB':x2,'inputC':x3})
+			pred2=model2.predict({'inputA':x1,'inputB':x2,'inputC':x3})
 			x1=np.reshape(x1,(23,7))
 			predi=darprediccion(x1,metadata,x3,pred)
+			predi2=darprediccion2(x1,metadata,x3,pred2)
 			#print(x1)
 			#print(x2)
 			#print(x3)
 		
-			return render_template('/showpred.html',pred=predi)
+			return render_template('/showpred.html',pred=predi,predi2=predi2)
 		elif retimasde7 :
 			return render_template('retioverflow.html')
 		elif retirepe:
@@ -200,15 +201,5 @@ def prueba2():
 			return render_template('retiyaapro.html')
 
 
-
-	
-
-
-
-
-
-
 if __name__ == '__main__':  
     app.run(debug = True)
-
-

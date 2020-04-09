@@ -1,0 +1,31 @@
+html {
+    background-image: url('/static/unimet.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+}
+
+body{
+    justify-content: center;
+    color:lightgrey;
+    font-weight: bold;
+    font-family: verdana;
+    font-size: 15px;
+    background-color: #333;
+    border: 1px solid black;
+    opacity: 0.95;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h2{
+    color:beige;
+    text-align: center;
+    font-weight: bold;
+    font-family: verdana;
+    font-size: 20px;
+    margin-top: 40px;
+}
