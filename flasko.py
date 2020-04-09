@@ -189,13 +189,13 @@ def prueba2():
 			pred=model.predict({'inputA':x1,'inputB':x2,'inputC':x3})
 			pred2=model2.predict({'inputA':x1,'inputB':x2,'inputC':x3})
 			x1=np.reshape(x1,(23,7))
-			#predi=darprediccion(x1,metadata,x3,pred)
+			predi=darprediccion(x1,metadata,x3,pred)
 			predi2=darprediccion2(x1,metadata,x3,pred2)
 			#print(x1)
 			#print(x2)
 			#print(x3)
 		
-			return render_template('/showpred.html',predi2=predi2)
+			return render_template('/showpred.html',pred=predi,predi2=predi2)
 		elif retimasde7 :
 			return render_template('retioverflow.html')
 		elif retirepe:
