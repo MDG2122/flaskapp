@@ -337,6 +337,7 @@ def darprediccion(xx,metadata,x3,prediccion):
     #print(prediccion.shape)
     for j in range(7-nummaterias,7):
         listaaux.append('materia: '+str(metadata.iloc[int(ultimotrim[j]-1)][0])+' proababilidad de nota mayor a 12: '+str(prediccion[0,j]))
+<<<<<<< HEAD
 
 
 
@@ -447,3 +448,106 @@ def validar5(x1,retiradas,x2):
 
 
 
+=======
+
+
+
+    return listaaux
+
+def darprediccion2(xx,metadata,x3,prediccion):
+    xx=xx
+    x3=x3
+    metadata=metadata
+    prediccion=prediccion
+    listaaux=[]
+    prediccion
+    for i in range(7):
+        if x3[0,i]==1:
+            nummaterias=i+1
+    for i in range(23):
+        if np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])==0:
+            ultimotrim=xx[i]
+    #print(ultimotrim.shape)
+    #print(prediccion.shape)
+    for j in range(7-nummaterias,7):
+        listaaux.append('materia: '+str(metadata.iloc[int(ultimotrim[j]-1)][0])+' proababilidad de nota mayor a 10: '+str(prediccion[0,j]))
+
+
+
+    return listaaux
+
+def validar1(xx,pred,x2):
+    xx=xx
+    pred=pred
+    x2=x2
+    pred = pred.split(",")
+    pred=np.asarray(pred)
+    todaspasadas=True
+    for i in range(pred.shape[0]):
+        if int(pred[i])!=0:
+            for t in range(xx.shape[0]):
+                for y in range(xx.shape[1]):
+                    if xx[t,y]==int(pred[i]) and x2[t,y]>=10 and int(pred[i])!=19 and int(pred[i])!=59:
+                        todaspasadas=False
+    return todaspasadas
+
+def validar2(pred):
+    pred=pred
+    pred = pred.split(",")
+    pred=np.asarray(pred)
+    matrepe=False
+    for i in range(pred.shape[0]):
+        if int(pred[i])!=0:
+            for j in range(pred.shape[0]):
+                if int(pred[j])==int(pred[i]) and i!=j and int(pred[i])!=19:
+                    matrepe=True
+    return matrepe
+
+def validar3(x1,retiradas):
+    x1=x1
+    retiradas = retiradas.split(",")
+    retiradas=np.asarray(retiradas)
+    error=False
+    for i in range(retiradas.shape[0]):
+        if i%2==0 or i==0 and i<=retiradas.shape[0]-1:
+            if int(retiradas[i+1])!=0:
+                cuenta=np.count_nonzero(x1[int(retiradas[i])-1])
+                if cuenta<7:    
+                    cuenta=6-cuenta
+                    x1[int(retiradas[i])-1,cuenta]=int(retiradas[i+1])
+                elif cuenta==7:
+                    error=True
+    return error
+
+
+def validar4(retiradas):
+    retiradas = retiradas.split(",")
+    retiradas=np.asarray(retiradas)
+    error=False
+    for i in range(retiradas.shape[0]):
+        if i%2==0 or i==0 and i<=retiradas.shape[0]-1:
+            if int(retiradas[i+1])!=0:
+                for k in range(retiradas.shape[0]):
+                    if k%2!=0 or k!=0 and k<=retiradas.shape[0]-1 and int(retiradas[k])!=0:
+                        if k!=i+1 and retiradas[k-1]==retiradas[i] and int(retiradas[k])!=19 and retiradas[k]==retiradas[i+1]:
+                            error=True
+
+    return error
+
+def validar5(x1,retiradas,x2):
+    x1=x1
+    retiradas=retiradas
+    x2=x2
+    retiradas = retiradas.split(",")
+    retiradas=np.asarray(retiradas)
+    error=False
+    for i in range(retiradas.shape[0]):
+        if i%2==0 or i==0 and i<=retiradas.shape[0]-1:
+            if int(retiradas[i+1])!=0 and int(retiradas[i+1])!=19 and int(retiradas[i+1])!=59:
+                for p in range(x1.shape[0]):
+                    for t in range(x1.shape[1]):
+                        if x1[p,t]==int(retiradas[i+1]) and x2[p,t]>=10 and p<int(retiradas[i])-1:
+                            error=True
+    return error
+    
+>>>>>>> 82f7a4650cf8da68ea92e248db05d60a0ed986ce
