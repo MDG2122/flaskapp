@@ -155,61 +155,6 @@ def upload_file():
 		else:
 			flash('Allowed file is  pdf')
 			return redirect(request.url)
-<<<<<<< HEAD
-
-
-@app.route('/materia')
-def prueba():
-	matynotas=session['matynotas']
-	return render_template('showdata1.html',matynotas=matynotas)
-
-
-@app.route('/materia', methods=['POST'])
-def prueba2():
-	if request.method == 'POST':
-		json_dump=session['json']
-		json_load = json.loads(json_dump)
-		xx = np.asarray(json_load["xx"])
-		x2 = np.asarray(json_load["x2"])
-		x3 = np.asarray(json_load["x3"])
-		retiradas=request.form['arreglo']
-		retimasde7=validar3(xx,retiradas)
-		retirepe=validar4(retiradas)
-		retiyaapro=validar5(xx,retiradas,x2)
-		if retimasde7==False and retirepe==False and retiyaapro==False:
-			x1,x2=incluirreti(xx,x2,retiradas)
-			x1,x2=ordenarmenoramayor(xx,x2)
-			lista=imprimirtrimestres(x1,metadata,x2)
-			matynotas = lista
-			x1=np.reshape(x1,(1,23*7))
-			x2=np.reshape(x2,(1,23*7,1))
-			x3=np.reshape(x3,((1,7)))
-			pred=model.predict({'inputA':x1,'inputB':x2,'inputC':x3})
-			pred2=model2.predict({'inputA':x1,'inputB':x2,'inputC':x3})
-			x1=np.reshape(x1,(23,7))
-			predi=darprediccion(x1,metadata,x3,pred)
-			predi2=darprediccion2(x1,metadata,x3,pred2)
-			#print(x1)
-			#print(x2)
-			#print(x3)
-		
-			return render_template('/showpred.html',pred=predi,predi2=predi2)
-		elif retimasde7 :
-			return render_template('retioverflow.html')
-		elif retirepe:
-			return render_template('retirepe.html')
-		elif retiyaapro:
-			return render_template('retiyaapro.html')
-
-
-
-	
-
-
-
-
-=======
->>>>>>> 82f7a4650cf8da68ea92e248db05d60a0ed986ce
 
 
 @app.route('/materia')
