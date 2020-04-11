@@ -4,7 +4,7 @@ from flask import Flask, flash, request, redirect, render_template, url_for,sess
 from werkzeug.utils import secure_filename
 import pandas as pd
 from datos import listacodigos,codigosynbombres
-from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred,incluirreti,darprediccion,validar1,validar2,validar3,validar4,validar5,darprediccion2
+from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred,incluirreti,darprediccion,validar1,validar2,validar3,validar4,validar5,darprediccion2,ulttrim
 import json
 import numpy as np
 #os.environ['TIKA_SERVER_JAR'] = 'https://repo1.maven.org/maven2/org/apache/tika/tika-server/1.19/tika-server-1.19.jar'
@@ -127,6 +127,7 @@ def upload_file():
 				#x2=cambiarformato(x2)
 				xx,x2=ordenarmenoramayor(xx,x2)
 				#x3=obtenernummat(xx)
+				trimfinal=ulttrim(xx)
 				lista=imprimirtrimestres(xx,metadata,x2)
 				matynotas = lista
 				#print(matynotas)
@@ -136,8 +137,9 @@ def upload_file():
 				session['json'] = json_dump
 				#session['x2'] = x2
 				session['matynotas'] = matynotas
-				print(x3)
-				return redirect(url_for('.prueba', matynotas=matynotas, json_dump=json_dump))
+				session['trimfinal'] = trimfinal
+				#print(x3)
+				return redirect(url_for('.prueba', matynotas=matynotas,trimfinal=trimfinal, json_dump=json_dump))
 				#prueba(xx,x2,matynotas)
 				#if request.method == 'POST':
 
@@ -160,7 +162,8 @@ def upload_file():
 @app.route('/materia')
 def prueba():
 	matynotas=session['matynotas']
-	return render_template('showdata1.html',matynotas=matynotas)
+	trimfinal=session['trimfinal']
+	return render_template('showdata1.html',matynotas=matynotas,trimfinal=trimfinal)
 
 
 @app.route('/materia', methods=['POST'])

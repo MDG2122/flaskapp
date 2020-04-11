@@ -3,7 +3,6 @@ import re
 #from tika import parser
 import pandas as pd
 import numpy as np
-import json
 
 
 
@@ -251,7 +250,7 @@ def ordenarmenoramayor(arreglo1, arreglo2):
                 numrecorrido = numrecorrido+1'''
 
     return xxord, x3ord  # ,yord
-'''
+
 def imprimirtrimestres(xx,metadata,x2):
     xx=xx
     lista=[]
@@ -278,55 +277,6 @@ def imprimirtrimestres(xx,metadata,x2):
                     listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' ')  
             lista.append(listaaux)
     
-    return lista
-'''
-
-def imprimirtrimestres(xx,metadata,x2):
-    xx=xx
-    lista={}
-    metadata=metadata
-    trimestre=0
-    cont=0
-    for i in range(xx.shape[0]):
-        listaaux1=[]
-        listaaux2=[]
-        cont=cont+1
-        if np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])!=0:
-            trimestre=trimestre+1
-            listaaux1.append('Trimestre')
-            listaaux2.append(trimestre)
-            for j in range(xx.shape[1]):
-                if xx[i,j]!=0:
-                    if x2[i,j]!=0.1:
-                        #listaaux1.append('Materia')   
-                        listaaux1.append(str(metadata.iloc[int(xx[i,j]-1)][0]))
-                        ##listaaux1.append('Nota')
-                        listaaux2.append(x2[i,j])
-
-                    elif x2[i,j]==0.1:
-                        #listaaux1.append('Materia')
-                        listaaux1.append(str(metadata.iloc[int(xx[i,j]-1)][0]))
-                        #listaaux1.append('Nota')
-                        listaaux2.append(x2[i,j])
-
-            print(listaaux1)
-            print(listaaux2)
-            dictOfWords = dict(zip(listaaux1, listaaux2))
-            print(dictOfWords)
-            lista[cont]=dictOfWords
-        elif np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])==0:
-            listaaux1.append('Trimestre')
-            listaaux2.append('A predecir')
-            for j in range(xx.shape[1]):
-                if xx[i,j]!=0:
-                    #listaaux1.append('Materia')
-                    listaaux1.append(str(metadata.iloc[int(xx[i,j]-1)][0]))
-                    listaaux2.append('?')
-
-            zipbObj = zip(listaaux1, listaaux2)
-            dictOfWords = dict(zipbObj)
-            lista[cont]=dictOfWords
-    lista = json.dumps(lista)
     return lista
 
 def obtenernummat(xx):
@@ -488,12 +438,10 @@ def validar5(x1,retiradas,x2):
                             error=True
     return error
 
-
-
-
-
-
-
-
-
-
+def ulttrim(xx):
+    ultitrim=0
+    for i in range(xx.shape[0]):
+        if np.count_nonzero(xx[i])!=0:
+            ultitrim=i
+    print(ultitrim)
+    return ultitrim
