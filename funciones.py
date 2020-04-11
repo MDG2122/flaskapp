@@ -437,4 +437,11 @@ def validar5(x1,retiradas,x2):
                         if x1[p,t]==int(retiradas[i+1]) and x2[p,t]>=10 and p<int(retiradas[i])-1:
                             error=True
     return error
-    
+
+def ulttrim(xx):
+    ultitrim=0
+    for i in range(xx.shape[0]):
+        if np.count_nonzero(xx[i])!=0:
+            ultitrim=i
+    print(ultitrim)
+    return ultitrim
