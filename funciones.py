@@ -94,10 +94,15 @@ def buscar3(historico, codigosmateria, metadata, codigosynbombres):
                                                                                                          historico[posiactual] == 'REPR' or historico[posiactual] == 'NOT'):
 
                                 if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2:
-                                    # print(historico[posiactual])
-                                    nota = historico[posiactual]
-                                    esnota = True
-                                    x2[fila][columna] = nota
+                                    if int(historico[posiactual])!=0:
+                                        # print(historico[posiactual])
+                                        nota = historico[posiactual]
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                    else:
+                                        nota=0.01
+                                        esnota = True
+                                        x2[fila][columna] = nota
 
                                     #print(str(materia)+' '+str(nota))
                                 elif historico[posiactual] == 'SOB' or historico[posiactual] == 'SOBR' or historico[posiactual] == 'APRO' or historico[posiactual] == 'CONT' or historico[posiactual] == 'REPR' or historico[posiactual] == 'NOT':
@@ -159,10 +164,15 @@ def buscar3(historico, codigosmateria, metadata, codigosynbombres):
                                                                                                          historico[posiactual] == 'REPR' or historico[posiactual] == 'NOT'):
 
                                 if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2:
-                                    # print(historico[posiactual])
-                                    nota = historico[posiactual]
-                                    esnota = True
-                                    x2[fila][columna] = nota
+                                    if int(historico[posiactual])!=0:
+                                        # print(historico[posiactual])
+                                        nota = historico[posiactual]
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                    else:
+                                        nota=0.01
+                                        esnota = True
+                                        x2[fila][columna] = nota
 
                                     # print(str(materia)+' '+str(nota))#imprimir
                                 elif historico[posiactual] == 'SOB' or historico[posiactual] == 'SOBR' or historico[posiactual] == 'APRO' or historico[posiactual] == 'CONT' or historico[posiactual] == 'REPR' or historico[posiactual] == 'NOT':
@@ -438,12 +448,10 @@ def validar5(x1,retiradas,x2):
                             error=True
     return error
 
-
-
-
-
-
-
-
-
-
+def ulttrim(xx):
+    ultitrim=0
+    for i in range(xx.shape[0]):
+        if np.count_nonzero(xx[i])!=0:
+            ultitrim=i
+    print(ultitrim)
+    return ultitrim

@@ -1,10 +1,87 @@
 <!doctype html>
 <html lang="en">
+
+
 <head>
   <title>Prediccion</title>
-  <body>
-    <form method='post'>
-      Prediccion: {{ pred }}  
-      Prediccion2: {{predi2}}
-    </form>
-  </body>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}" />
+</head>
+
+<body>
+  <form method='post'>
+    <br>
+    Prediccion 1:
+
+    {% if pred[0] %}
+    <br>
+    <br>
+    {{ pred[0] }}
+    <br>
+    {{ pred[1] }}
+    <br>
+    {% if pred[2] %}
+    {{ pred[2] }}
+    <br>
+    {% endif %}
+    {% if pred[3] %}
+    {{ pred[3] }}
+    <br>
+    {% endif %}
+    {% if pred[4] %}
+    {{ pred[4] }}
+    <br>
+    {% endif %}
+    {% if pred[5] %}
+    {{ pred[5] }}
+    <br>
+    {% endif %}
+    {% if pred[6] %}
+    {{ pred[6] }}
+    <br>
+    {% endif %}
+    {% if pred[7] %}
+    {{ pred[7] }}
+    <br>
+    {% endif %}
+    {% endif %}
+
+    <br>
+    <!--
+    Prediccion 2:
+
+    {% if predi2[0] %}
+    <br>
+    <br>
+    {{ predi2[0] }}
+    <br>
+    {{ predi2[1] }}
+    <br>
+    {% if predi2[2] %}
+    {{ predi2[2] }}
+    <br>
+    {% endif %}
+    {% if predi2[3] %}
+    {{ predi2[3] }}
+    <br>
+    {% endif %}
+    {% if predi2[4] %}
+    {{ predi2[4] }}
+    <br>
+    {% endif %}
+    {% if predi2[5] %}
+    {{ predi2[5] }}
+    <br>
+    {% endif %}
+    {% if predi2[6] %}
+    {{ predi2[6] }}
+    <br>
+    {% endif %}
+    {% if predi2[7] %}
+    {{ predi2[7] }}
+    <br>
+    <br>
+    {% endif %}
+    {% endif %}
+    <br> -->
+  </form>
+</body>
