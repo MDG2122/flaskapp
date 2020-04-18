@@ -11,11 +11,17 @@ import numpy as np
 import tika
 tika.initVM()
 from tika import parser
-import keras
+from tensorflow import keras
 from keras.models import load_model
 from keras_multi_head import MultiHeadAttention
 from keras_layer_normalization import LayerNormalization
 from keras.layers import *
+import tensorflow as tf
+'''from tensorflow.python.keras.backend import set_session
+from tensorflow.python.keras.models import load_model'''
+from keras import backend as K
+K.set_session
+
 #import numpy as np
 metadata =pd.read_csv('static/metadata.csv',header=None)
 
@@ -53,8 +59,8 @@ class NonMasking(Layer):
     def get_output_shape_for(self, input_shape):   
         return input_shape
 
-model = load_model('model07361acc.h5',custom_objects={'MultiHeadAttention': MultiHeadAttention,'LayerNormalization':LayerNormalization,'NonMasking':NonMasking})
-model._make_predict_function()
+
+
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 	
@@ -183,15 +189,14 @@ def prueba2():
 			matynotas = lista
 			x1=np.reshape(x1,(1,23*7))
 			x2=np.reshape(x2,(1,23*7,1))
-			x3=np.reshape(x3,((1,7)))
+			x3=np.reshape(x3,((1,7)))\
+			
+
+			model = load_model('model07361acc.h5',custom_objects={'MultiHeadAttention': MultiHeadAttention,'LayerNormalization':LayerNormalization,'NonMasking':NonMasking})
 			pred=model.predict({'inputA':x1,'inputB':x2})
-			#pred2=model2.predict({'inputA':x1,'inputB':x2,'inputC':x3})
 			x1=np.reshape(x1,(23,7))
 			predi=darprediccion(x1,metadata,x3,pred)
-			#predi2=darprediccion2(x1,metadata,x3,pred2)
-			#print(x1)
-			#print(x2)
-			#print(x3)
+			
 		
 			return render_template('/showpred.html',pred=predi)
 		elif retimasde7 :

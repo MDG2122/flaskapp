@@ -346,7 +346,7 @@ def darprediccion(xx,metadata,x3,prediccion):
     #print(ultimotrim.shape)
     #print(prediccion.shape)
     for j in range(7-nummaterias,7):
-        listaaux.append('materia: '+str(metadata.iloc[int(ultimotrim[j]-1)][0])+' proababilidad de nota mayor a 12: '+str(prediccion[0,j]))
+        listaaux.append('materia: '+str(metadata.iloc[int(ultimotrim[j]-1)][0])+' proababilidad de nota mayor a 10: '+str(prediccion[0,j]))
 
 
 
