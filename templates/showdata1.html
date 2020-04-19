@@ -6,6 +6,7 @@
   <script>
     var bot1 = { bot1 }
   </script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}" />
   <script type="text/javascript">
     function mostrar() {
@@ -856,7 +857,7 @@
 <br>
 
 <body>
-  <form method="post" action="/materia" enctype="multipart/form-data">
+  <form method="post" action="/materias" enctype="multipart/form-data">
     <fieldset>
       <legend>Seleccione las materias que ha retirado</legend>
       <p>
@@ -865,7 +866,7 @@
           0 y 10 materias)</label>
         <ul>
           <input type="number" min="0" max="10" name="matRetiradas" id="matRetiradas" required>
-          <input type="button" value="Aceptar" onclick="javascript:mostrar()">
+          <input type="button" value="Aceptar" class="w3-button w3-black w3-round-xlarge" onclick="javascript:mostrar()">
           <div id="content1" style="display: none;">
 
             <label>Seleccione trimestre</label>
@@ -4979,7 +4980,7 @@
         </script>
 
         <p>
-          <input id="submit" type="submit" value="Submit" onclick="ObtenerRetiradas()">
+          <input id="submit" type="submit" value="Predecir!" class="w3-button w3-green w3-round-xlarge" onclick="ObtenerRetiradas()">
         </p>
       </p>
     </fieldset>

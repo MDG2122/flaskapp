@@ -163,14 +163,14 @@ def upload_file():
 			return redirect(request.url)
 
 
-@app.route('/materia')
+@app.route('/materias')
 def prueba():
 	matynotas=session['matynotas']
 	trimfinal=session['trimfinal']
 	return render_template('showdata1.html',matynotas=matynotas,trimfinal=trimfinal)
 
 
-@app.route('/materia', methods=['POST'])
+@app.route('/materias', methods=['POST'])
 def prueba2():
 	if request.method == 'POST':
 		json_dump=session['json']
