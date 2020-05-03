@@ -7,25 +7,30 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}" />
 </head>
 
-<body>
+<body style="text-align:center">
   <form method='post'>
     <br>
-    Prediccion 1:
-
+    Resultados
     {% if pred[0] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ pred[0] }}
     <br>
+    
     {{ pred[1] }}
     <br>
+    
     {% if pred[2] %}
     {{ pred[2] }}
     <br>
+    
     {% endif %}
     {% if pred[3] %}
     {{ pred[3] }}
     <br>
+    
     {% endif %}
     {% if pred[4] %}
     {{ pred[4] }}
@@ -34,17 +39,21 @@
     {% if pred[5] %}
     {{ pred[5] }}
     <br>
+    
     {% endif %}
     {% if pred[6] %}
     {{ pred[6] }}
     <br>
+    
     {% endif %}
     {% if pred[7] %}
     {{ pred[7] }}
     <br>
+    
     {% endif %}
     {% endif %}
-
+</div>
+</div>
     <br>
     
   </form>

@@ -8,6 +8,7 @@
   </script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}" />
+  
   <script type="text/javascript">
     function mostrar() {
       div1 = document.getElementById('content1');
@@ -43,12 +44,15 @@
 </head>
 
 <body>
-  <form method='post'>
+  <form method='post' style="text-align:center">
     <br>
     Materias por Trimestre:
+    
     {% if matynotas[0] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[0][0] }}
     <br>
     <br>
@@ -76,14 +80,19 @@
     {% endif %}
     {% if matynotas[0][7] %}
     {{ matynotas[0][7] }}
+
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[1] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[1][0] }}
     <br>
     <br>
@@ -112,13 +121,17 @@
     {% if matynotas[1][7] %}
     {{ matynotas[1][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[2] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[2][0] }}
     <br>
     <br>
@@ -147,13 +160,17 @@
     {% if matynotas[2][7] %}
     {{ matynotas[2][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[3] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[3][0] }}
     <br>
     <br>
@@ -182,13 +199,17 @@
     {% if matynotas[3][7] %}
     {{ matynotas[3][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[4] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[4][0] }}
     <br>
     <br>
@@ -217,13 +238,17 @@
     {% if matynotas[4][7] %}
     {{ matynotas[4][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[5] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[5][0] }}
     <br>
     <br>
@@ -252,13 +277,17 @@
     {% if matynotas[5][7] %}
     {{ matynotas[5][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[6] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[6][0] }}
     <br>
     <br>
@@ -287,13 +316,17 @@
     {% if matynotas[6][7] %}
     {{ matynotas[6][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[7] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[7][0] }}
     <br>
     <br>
@@ -322,13 +355,17 @@
     {% if matynotas[7][7] %}
     {{ matynotas[7][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[8] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[8][0] }}
     <br>
     <br>
@@ -357,13 +394,17 @@
     {% if matynotas[8][7] %}
     {{ matynotas[8][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[9] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[9][0] }}
     <br>
     <br>
@@ -392,13 +433,17 @@
     {% if matynotas[9][7] %}
     {{ matynotas[9][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[10] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[10][0] }}
     <br>
     <br>
@@ -427,13 +472,17 @@
     {% if matynotas[10][7] %}
     {{ matynotas[10][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[11] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[11][0] }}
     <br>
     <br>
@@ -462,13 +511,17 @@
     {% if matynotas[11][7] %}
     {{ matynotas[11][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[12] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[12][0] }}
     <br>
     <br>
@@ -497,13 +550,17 @@
     {% if matynotas[12][7] %}
     {{ matynotas[12][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[13] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[13][0] }}
     <br>
     <br>
@@ -532,13 +589,17 @@
     {% if matynotas[13][7] %}
     {{ matynotas[13][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[14] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[14][0] }}
     <br>
     <br>
@@ -567,13 +628,17 @@
     {% if matynotas[14][7] %}
     {{ matynotas[14][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[15] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[15][0] }}
     <br>
     <br>
@@ -602,13 +667,17 @@
     {% if matynotas[15][7] %}
     {{ matynotas[15][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[16] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[16][0] }}
     <br>
     <br>
@@ -637,13 +706,17 @@
     {% if matynotas[16][7] %}
     {{ matynotas[16][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[17] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[17][0] }}
     <br>
     <br>
@@ -672,13 +745,17 @@
     {% if matynotas[17][7] %}
     {{ matynotas[17][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[18] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[18][0] }}
     <br>
     <br>
@@ -707,13 +784,17 @@
     {% if matynotas[18][7] %}
     {{ matynotas[18][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[19] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[19][0] }}
     <br>
     <br>
@@ -742,13 +823,17 @@
     {% if matynotas[19][7] %}
     {{ matynotas[19][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[20] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[20][0] }}
     <br>
     <br>
@@ -777,13 +862,17 @@
     {% if matynotas[20][7] %}
     {{ matynotas[20][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[21] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[21][0] }}
     <br>
     <br>
@@ -812,13 +901,17 @@
     {% if matynotas[21][7] %}
     {{ matynotas[21][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[22] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[22][0] }}
     <br>
     <br>
@@ -847,9 +940,11 @@
     {% if matynotas[22][7] %}
     {{ matynotas[22][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
   </form>
 </body>
 
@@ -1201,74 +1296,74 @@
             <select id="myMatRet1">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
 
 
@@ -1610,74 +1705,74 @@
             <select id="myMatRet2">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
 
 
@@ -2018,74 +2113,74 @@
             <select id="myMatRet3">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
 
 
@@ -2426,74 +2521,74 @@
             <select id="myMatRet4">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
 
 
@@ -2834,74 +2929,74 @@
             <select id="myMatRet5">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
 
 
@@ -3242,74 +3337,74 @@
             <select id="myMatRet6">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
 
 
@@ -3650,74 +3745,74 @@
             <select id="myMatRet7">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
 
 
@@ -4058,74 +4153,74 @@
             <select id="myMatRet8">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
 
 
@@ -4466,74 +4561,74 @@
             <select id="myMatRet9">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
 
 
@@ -4874,74 +4969,74 @@
             <select id="myMatRet10">
 
               <option value="0">NINGUNA</option>
-              <option value="1">ADMINISTRACION DE BASES DE DATOS</option>
-              <option value="2">ALGEBRA LINEAL</option>
-              <option value="3">ALGORITMOS Y PROGRAMACION</option>
+              <option value="1">ADMINISTRACIÓN DE BASES DE DATOS</option>
+              <option value="2">ÁLGEBRA LINEAL</option>
+              <option value="3">ALGORITMOS Y PROGRAMACIÓN</option>
               <option value="4">APRENDIENDO A EMPRENDER</option>
               <option value="5">ARQUITECTURA DEL COMPUTADOR</option>
               <option value="6">BASES DE DATOS</option>
-              <option value="7">COMPETENCIAS EN ACCION</option>
-              <option value="8">COMPRENSION DE VENEZUELA</option>
-              <option value="9">COMPUTACION EMERGENTE</option>
+              <option value="7">COMPETENCIAS EN ACCIÓN</option>
+              <option value="8">COMPRENSIÓN DE VENEZUELA</option>
+              <option value="9">COMPUTACIÓN EMERGENTE</option>
               <option value="10">DEFENSA PROYECTO INDUSTRIAL-ING.SISTEMAS</option>
               <option value="11">DEFENSA TRABAJO DE GRADO-ING.SISTEMAS</option>
-              <option value="12">DISEñO ASISTIDO POR COMPUTADOR</option>
+              <option value="12">DISEÑO ASISTIDO POR COMPUTADOR</option>
               <option value="13">ECUACIONES DIFERENCIALES</option>
-              <option value="14">ELEMENTOS DE MATEMATICA 1</option>
-              <option value="15">ELEMENTOS DE MATEMATICA 2</option>
-              <option value="16">ESTADISTICA PARA INGENIEROS</option>
+              <option value="14">ELEMENTOS DE MATEMÁTICA 1</option>
+              <option value="15">ELEMENTOS DE MATEMÁTICA 2</option>
+              <option value="16">ESTADÍSTICA PARA INGENIEROS</option>
               <option value="17">ESTRATEGIAS INSTRUMENTALES</option>
               <option value="18">ESTRUCTURAS DE DATOS</option>
-              <option value="19">Electiva</option>
-              <option value="20">FISICA I</option>
-              <option value="21">FISICA II</option>
-              <option value="22">FISICA III</option>
+              <option value="19">ELECTIVA</option>
+              <option value="20">FÍSICA I</option>
+              <option value="21">FÍSICA II</option>
+              <option value="22">FÍSICA III</option>
               <option value="23">GERENCIA DE PROYECTOS TIC</option>
               <option value="24">GESTIÓN DE LA CADENA DE SUMINISTRO I</option>
-              <option value="25">INGENIERIA DE SOFTWARE</option>
-              <option value="26">INGENIERIA ECONOMICA</option>
+              <option value="25">INGENIERÍA DE SOFTWARE</option>
+              <option value="26">INGENIERÍA ECONOMICA</option>
               <option value="27">INGENIERÍA AMBIENTAL</option>
-              <option value="28">INGLES I</option>
-              <option value="29">INGLES II</option>
-              <option value="30">INGLES III</option>
-              <option value="31">INGLES IV</option>
-              <option value="32">INGLES V</option>
+              <option value="28">INGLÉS I</option>
+              <option value="29">INGLÉS II</option>
+              <option value="30">INGLÉS III</option>
+              <option value="31">INGLÉS IV</option>
+              <option value="32">INGLÉS V</option>
               <option value="33">INICIATIVA EMPRENDEDORA</option>
-              <option value="34">INSTRUMENTACION Y APRENDIZAJE</option>
-              <option value="35">INTRODUCCION A LA INGENIERIA</option>
-              <option value="36">LABORATORIO DE FISICA</option>
-              <option value="37">LABORATORIO QUIMICA GENERAL I</option>
+              <option value="34">INSTRUMENTACIÓN Y APRENDIZAJE</option>
+              <option value="35">INTRODUCCIÓN A LA INGENIERÍA</option>
+              <option value="36">LABORATORIO DE FÍSICA</option>
+              <option value="37">LABORATORIO QUÍMICA GENERAL I</option>
               <option value="38">LECTURA Y APRENDIZAJE</option>
               <option value="39">LENGUA Y LENGUAJE</option>
               <option value="40">LENGUAJE Y UNIVERSALIDAD</option>
               <option value="41">LIDERAZGO CIUDADANO Y DES. SOSTENIBLE</option>
-              <option value="42">MATEMATICA BASICA</option>
-              <option value="43">MATEMATICA GENERAL</option>
-              <option value="44">MATEMATICAS DISCRETAS</option>
-              <option value="45">MATEMATICAS I</option>
-              <option value="46">MATEMATICAS II</option>
-              <option value="47">MATEMATICAS III</option>
-              <option value="48">MATEMATICAS IV</option>
-              <option value="49">MATEMATICAS V</option>
+              <option value="42">MATEMÁTICA BÁSICA</option>
+              <option value="43">MATEMÁTICA GENERAL</option>
+              <option value="44">MATEMÁTICAS DISCRETAS</option>
+              <option value="45">MATEMÁTICAS I</option>
+              <option value="46">MATEMÁTICAS II</option>
+              <option value="47">MATEMÁTICAS III</option>
+              <option value="48">MATEMÁTICAS IV</option>
+              <option value="49">MATEMÁTICAS V</option>
               <option value="50">MODELAC. DE SISTEMAS EN REDES</option>
-              <option value="51">MODELOS ESTOCASTICOS</option>
-              <option value="52">OPTIMIZACION I</option>
-              <option value="53">OPTIMIZACION II</option>
-              <option value="54">ORGANIZACION DEL COMPUTADOR</option>
-              <option value="55">PROYECTOS DE INGENIERIA</option>
-              <option value="56">QUIMICA GENERAL I</option>
-              <option value="57">RESP. SOCIAL Y PARTICIPACION CIUDADANA</option>
-              <option value="58">SEGURIDAD DE LA INFORMACIÖN</option>
+              <option value="51">MODELOS ESTOCÁSTICOS</option>
+              <option value="52">OPTIMIZACIÓN I</option>
+              <option value="53">OPTIMIZACIÓN II</option>
+              <option value="54">ORGANIZACIÓN DEL COMPUTADOR</option>
+              <option value="55">PROYECTOS DE INGENIERÍA</option>
+              <option value="56">QUÍMICA GENERAL I</option>
+              <option value="57">RESP. SOCIAL Y PARTICIPACIÓN CIUDADANA</option>
+              <option value="58">SEGURIDAD DE LA INFORMACIÓN</option>
               <option value="59">SERVICIO COMUNITARIO</option>
               <option value="60">SIMULACIÓN</option>
               <option value="61">SISTEMAS DE APOYO</option>
-              <option value="62">SISTEMAS DE INFORMACION</option>
+              <option value="62">SISTEMAS DE INFORMACIÓN</option>
               <option value="63">SISTEMAS DE REDES</option>
               <option value="64">SISTEMAS OPERATIVOS</option>
               <option value="65">TALLER DE TRABAJO DE GRADO - INGENIERÍA</option>
-              <option value="66">TECNICAS DE GESTION DE LA INFORMACION</option>
-              <option value="67">TECNOLOGIAS PARA EL APRENDIZAJE</option>
-
+              <option value="66">TECNICAS DE GESTIÓN DE LA INFORMACIÓN</option>
+              <option value="67">TECNOLOGÍAS PARA EL APRENDIZAJE</option>
+  
             </select>
         </ul>
         </div>
