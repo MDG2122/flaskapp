@@ -8,6 +8,7 @@
   </script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}" />
+  
   <script type="text/javascript">
     function mostrar() {
       div1 = document.getElementById('content1');
@@ -43,12 +44,15 @@
 </head>
 
 <body>
-  <form method='post'>
+  <form method='post' style="text-align:center">
     <br>
     Materias por Trimestre:
+    
     {% if matynotas[0] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[0][0] }}
     <br>
     <br>
@@ -76,14 +80,19 @@
     {% endif %}
     {% if matynotas[0][7] %}
     {{ matynotas[0][7] }}
+
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[1] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[1][0] }}
     <br>
     <br>
@@ -112,13 +121,17 @@
     {% if matynotas[1][7] %}
     {{ matynotas[1][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[2] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[2][0] }}
     <br>
     <br>
@@ -147,13 +160,17 @@
     {% if matynotas[2][7] %}
     {{ matynotas[2][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[3] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[3][0] }}
     <br>
     <br>
@@ -182,13 +199,17 @@
     {% if matynotas[3][7] %}
     {{ matynotas[3][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[4] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[4][0] }}
     <br>
     <br>
@@ -217,13 +238,17 @@
     {% if matynotas[4][7] %}
     {{ matynotas[4][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[5] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[5][0] }}
     <br>
     <br>
@@ -252,13 +277,17 @@
     {% if matynotas[5][7] %}
     {{ matynotas[5][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[6] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[6][0] }}
     <br>
     <br>
@@ -287,13 +316,17 @@
     {% if matynotas[6][7] %}
     {{ matynotas[6][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[7] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[7][0] }}
     <br>
     <br>
@@ -322,13 +355,17 @@
     {% if matynotas[7][7] %}
     {{ matynotas[7][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[8] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[8][0] }}
     <br>
     <br>
@@ -357,13 +394,17 @@
     {% if matynotas[8][7] %}
     {{ matynotas[8][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[9] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[9][0] }}
     <br>
     <br>
@@ -392,13 +433,17 @@
     {% if matynotas[9][7] %}
     {{ matynotas[9][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[10] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[10][0] }}
     <br>
     <br>
@@ -427,13 +472,17 @@
     {% if matynotas[10][7] %}
     {{ matynotas[10][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[11] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[11][0] }}
     <br>
     <br>
@@ -462,13 +511,17 @@
     {% if matynotas[11][7] %}
     {{ matynotas[11][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[12] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[12][0] }}
     <br>
     <br>
@@ -497,13 +550,17 @@
     {% if matynotas[12][7] %}
     {{ matynotas[12][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[13] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[13][0] }}
     <br>
     <br>
@@ -532,13 +589,17 @@
     {% if matynotas[13][7] %}
     {{ matynotas[13][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[14] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[14][0] }}
     <br>
     <br>
@@ -567,13 +628,17 @@
     {% if matynotas[14][7] %}
     {{ matynotas[14][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[15] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[15][0] }}
     <br>
     <br>
@@ -602,13 +667,17 @@
     {% if matynotas[15][7] %}
     {{ matynotas[15][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[16] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[16][0] }}
     <br>
     <br>
@@ -637,13 +706,17 @@
     {% if matynotas[16][7] %}
     {{ matynotas[16][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[17] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[17][0] }}
     <br>
     <br>
@@ -672,13 +745,17 @@
     {% if matynotas[17][7] %}
     {{ matynotas[17][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[18] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[18][0] }}
     <br>
     <br>
@@ -707,13 +784,17 @@
     {% if matynotas[18][7] %}
     {{ matynotas[18][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[19] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[19][0] }}
     <br>
     <br>
@@ -742,13 +823,17 @@
     {% if matynotas[19][7] %}
     {{ matynotas[19][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[20] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[20][0] }}
     <br>
     <br>
@@ -777,13 +862,17 @@
     {% if matynotas[20][7] %}
     {{ matynotas[20][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[21] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[21][0] }}
     <br>
     <br>
@@ -812,13 +901,17 @@
     {% if matynotas[21][7] %}
     {{ matynotas[21][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
 
     {% if matynotas[22] %}
     <br>
     <br>
+    <div class="card">
+      <div class="container">
     {{ matynotas[22][0] }}
     <br>
     <br>
@@ -847,9 +940,11 @@
     {% if matynotas[22][7] %}
     {{ matynotas[22][7] }}
     <br>
-    <br>
+    
     {% endif %}
     {% endif %}
+  </div>
+</div>
   </form>
 </body>
 

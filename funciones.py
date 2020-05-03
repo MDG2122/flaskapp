@@ -59,7 +59,7 @@ def buscar3(historico, codigosmateria, metadata, codigosynbombres):
                 # print(posicionperiodosiguiente)
                 for j in range(posicionperiodoactual, posicionperiodosiguiente, 1):
 
-                    if historico[j] in codigosmateria or (len(historico[j]) == 7 and (historico[j][0] == 'B' or historico[j][0] == 'F')):
+                    if historico[j] in codigosmateria or (len(historico[j]) == 7 and (historico[j][0] == 'B' or historico[j][0] == 'F') and (historico[j][6].isdigit())):
                         columna = columna+1
                         if historico[j] in codigosmateria:
                             # print(historico[j])
@@ -131,7 +131,7 @@ def buscar3(historico, codigosmateria, metadata, codigosynbombres):
                 # print(posicionperiodoactual)
                 # print(posicionperiodosiguiente)
                 for j in range(posicionperiodoactual, posicionperiodosiguiente, 1):
-                    if historico[j] in codigosmateria or (len(historico[j]) == 7 and (historico[j][0] == 'B' or historico[j][0] == 'F')):
+                    if historico[j] in codigosmateria or (len(historico[j]) == 7 and (historico[j][0] == 'B' or historico[j][0] == 'F') and (historico[j][6].isdigit())):
                         columna = columna+1
                         if historico[j] in codigosmateria:
                             # print(historico[j])
