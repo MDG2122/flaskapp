@@ -269,22 +269,61 @@ def imprimirtrimestres(xx,metadata,x2):
 
     for i in range(xx.shape[0]):
         listaaux=[]
+        listamatenonum=[10,11,59,65]
+        espacio='   |   '
         if np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])!=0:
             trimestre=trimestre+1
-            listaaux.append('Trimestre: '+str(trimestre))
+            listaaux.append('Trimestre '+str(trimestre))
             for j in range(xx.shape[1]):
-                if xx[i,j]!=0:
-                    if x2[i,j]!=0.1:
-                        listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' nota: '+str(x2[i,j]))    
+                if xx[i,j]!=0 and xx[i,j] not in listamatenonum:
+                    if x2[i,j]!=0.1 and  x2[i,j]!=0.01:
+                        listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+str(int(x2[i,j])))    
                     elif x2[i,j]==0.1:
-                        listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' nota: Retirada')
+                        listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'Retirada')
+                    elif x2[i,j]==0.01:
+                        listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'0')
+                elif xx[i,j] in listamatenonum:
+                    if xx[i,j]==10 or xx[i,j]==11:
+                        if x2[i,j]==10:
+                            listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'APRO')
+                        elif x2[i,j]==20:
+                            listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'HONO')
+                        elif x2[i,j]==5:
+                            listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'REPR/DIFE')
+                    elif xx[i,j]==65:
+                        if x2[i,j]==10:
+                            listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'APRO')
+                        elif x2[i,j]==20:
+                            listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'SOBR')
+                        elif x2[i,j]==5:
+                            listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'REPR')
+                        elif x2[i,j]==15:
+                            listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'NOT')
+                    elif xx[i,j]==59:
+                        primerverano=True
+                        for y in range(i+1,23):
+                            for u in range(7):
+                                if xx[y,u]==59:
+                                    primerverano=False
+                        if primerverano is False:
+                            listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'CONT')
+                        else:
+                            if x2[i,j]==10:
+                                listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'APRO')
+                            elif x2[i,j]==20:
+                                listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'SOBR')
+                            elif x2[i,j]==5:
+                                listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'REPR')
+                            elif x2[i,j]==15:
+                                listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'NOT')
+                        
 
             lista.append(listaaux)
         elif np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])==0:
-            listaaux.append('Trimestre a predecir:')
+            listaaux.append('Trimestre a Predecir')
             for j in range(xx.shape[1]):
                 if xx[i,j]!=0:
-                    listaaux.append('materia: '+str(metadata.iloc[int(xx[i,j]-1)][0])+' ')  
+                    listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+' ')  
             lista.append(listaaux)
     
     return lista
@@ -346,7 +385,8 @@ def darprediccion(xx,metadata,x3,prediccion):
     #print(ultimotrim.shape)
     #print(prediccion.shape)
     for j in range(7-nummaterias,7):
-        listaaux.append('materia: '+str(metadata.iloc[int(ultimotrim[j]-1)][0])+' proababilidad de nota mayor a 10: '+str(prediccion[0,j]))
+        
+        listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar')
 
 
 
