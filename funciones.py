@@ -385,9 +385,12 @@ def darprediccion(xx,metadata,x3,prediccion):
     #print(ultimotrim.shape)
     #print(prediccion.shape)
     for j in range(7-nummaterias,7):
-        
-        listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar')
-
+        if prediccion[0,j]<=0.8:
+            listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar')
+        elif prediccion[0,j]>=0.8 and  prediccion[0,j]<=0.95:
+            listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar (Muy posible aprobar con una califcacion de 12 o mas)')
+        elif prediccion[0,j]>=0.95:
+            listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar (Muy posible aprobar con una califcacion de 14 o mas)')
 
 
     return listaaux

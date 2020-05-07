@@ -4,11 +4,12 @@
 
 <head>
   <title>Prediccion</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}" />
 </head>
 
 <body class="center">
-  <form method='post' >
+  <form method='post' action="/prediccion">
     <br>
     Resultados
     {% if pred[0] %}
@@ -55,6 +56,6 @@
 </div>
 </div>
     <br>
-    
+    <button  type="submit" class="w3-button w3-green w3-round-xlarge">Predecir otras materias</button>
   </form>
 </body>
