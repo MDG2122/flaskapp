@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
     <title>Error</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}" />
 </head>    
 
@@ -15,4 +16,7 @@
     <h1>
         Al agregar materias retiradas se obtuvo un trimestre con 2 o mas de la misma materia retirada
     </h1>
+    <form method="post" action="/retiradasrepetidas">
+        <button  type="submit" class="w3-button w3-black w3-round-xlarge">Regresar</button>
+        </form>
 </body>

@@ -154,9 +154,9 @@ def upload_file():
 				#return redirect('/')
 				#return xx,x2
 			elif todaspasadas==False :
-				return render_template('materiayaaprobada.html')
+				return redirect(url_for('.errormatapro1'))
 			elif matrepe==True :
-				return render_template('materiasrepe.html')
+				return redirect(url_for('.errormatrepe1'))
 
 		else:
 			flash('Allowed file is  pdf')
@@ -168,6 +168,8 @@ def prueba():
 	matynotas=session['matynotas']
 	trimfinal=session['trimfinal']
 	return render_template('showdata1.html',matynotas=matynotas,trimfinal=trimfinal)
+
+
 
 
 @app.route('/materias', methods=['POST'])
@@ -196,16 +198,71 @@ def prueba2():
 			pred=model.predict({'inputA':x1,'inputB':x2})
 			x1=np.reshape(x1,(23,7))
 			predi=darprediccion(x1,metadata,x3,pred)
-			
-		
-			return render_template('/showpred.html',pred=predi)
+			session['prediccion'] = predi
+			return redirect(url_for('.predi1',pred=predi))
+			#return render_template('/showpred.html',pred=predi)
 		elif retimasde7 :
-			return render_template('retioverflow.html')
+			#return render_template('retioverflow.html')
+			return redirect(url_for('.errorretover1'))
 		elif retirepe:
-			return render_template('retirepe.html')
+			return redirect(url_for('.errorretover1'))
 		elif retiyaapro:
-			return render_template('retiyaapro.html')
+			return redirect(url_for('.errorretyaapr1'))
 
+
+
+@app.route('/prediccion')
+def predi1():
+	predi=session['prediccion']
+	return render_template('/showpred.html',pred=predi)
+@app.route('/prediccion', methods=['POST'])
+def predi2():
+	if request.method == 'POST':
+		return redirect(url_for('.upload_file'))
+
+@app.route('/errormateriaaprob')
+def errormatapro1():
+	return render_template('materiayaaprobada.html')
+@app.route('/errormateriaaprob', methods=['POST'])
+def errormatapro2():
+	if request.method == 'POST':
+		return redirect(url_for('.upload_file'))
+
+
+@app.route('/materiarepetida')
+def errormatrepe1():
+	return render_template('materiasrepe.html')
+@app.route('/materiarepetida', methods=['POST'])
+def errormatrepe2():
+	if request.method == 'POST':
+		return redirect(url_for('.upload_file'))
+
+
+@app.route('/retiradasoverflow')
+def errorretover1():
+	return render_template('retioverflow.html')
+@app.route('/retiradasoverflow', methods=['POST'])
+def errorretover2():
+	if request.method == 'POST':
+		return redirect(url_for('.prueba'))
+
+
+@app.route('/retiradasrepetidas')
+def errorretrepe1():
+	return render_template('retirepe.html')
+@app.route('/retiradasrepetidas', methods=['POST'])
+def errorretrepe2():
+	if request.method == 'POST':
+		return redirect(url_for('.prueba'))
+
+
+@app.route('/retiradasyaaprobadas')
+def errorretyaapr1():
+	return render_template('retiyaapro.html')
+@app.route('/retiradasyaaprobadas', methods=['POST'])
+def errorretyaapr2():
+	if request.method == 'POST':
+		return redirect(url_for('.prueba'))
 
 if __name__ == '__main__':  
     app.run(debug = True)
