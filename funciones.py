@@ -300,23 +300,31 @@ def imprimirtrimestres(xx,metadata,x2):
                         elif x2[i,j]==15:
                             listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'NOT')
                     elif xx[i,j]==59:
-                        primerverano=True
-                        for y in range(i+1,23):
-                            for u in range(7):
-                                if xx[y,u]==59:
-                                    primerverano=False
-                        if primerverano is False:
+                        contadordeveranos=0
+                        for t in range(xx.shape[0]):
+                            for l in range(xx.shape[1]):
+                                if xx[t,l]==59:
+                                    contadordeveranos=contadordeveranos+1
+                        if contadordeveranos==1:
                             listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'CONT')
                         else:
-                            if x2[i,j]==10:
-                                listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'APRO')
-                            elif x2[i,j]==20:
-                                listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'SOBR')
-                            elif x2[i,j]==5:
-                                listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'REPR')
-                            elif x2[i,j]==15:
-                                listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'NOT')
-                        
+                            primerverano=True
+                            for y in range(i+1,23):
+                                for u in range(7):
+                                    if xx[y,u]==59:
+                                        primerverano=False
+                            if primerverano is False:
+                                listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'CONT')
+                            else:
+                                if x2[i,j]==10:
+                                    listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'APRO')
+                                elif x2[i,j]==20:
+                                    listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'SOBR')
+                                elif x2[i,j]==5:
+                                    listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'REPR')
+                                elif x2[i,j]==15:
+                                    listaaux.append(''+str(metadata.iloc[int(xx[i,j]-1)][0])+espacio*1+'NOT')
+                            
 
             lista.append(listaaux)
         elif np.count_nonzero(xx[i])!=0 and np.count_nonzero(xx[i+1])==0:
@@ -376,6 +384,7 @@ def darprediccion(xx,metadata,x3,prediccion):
     prediccion=prediccion
     listaaux=[]
     prediccion
+    listamatenonum=[10,11,59,65]
     for i in range(7):
         if x3[0,i]==1:
             nummaterias=i+1
@@ -385,12 +394,15 @@ def darprediccion(xx,metadata,x3,prediccion):
     #print(ultimotrim.shape)
     #print(prediccion.shape)
     for j in range(7-nummaterias,7):
-        if prediccion[0,j]<=0.8:
+        if ultimotrim[j] not in listamatenonum:
+            if prediccion[0,j]<=0.8:
+                listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar')
+            elif prediccion[0,j]>=0.8 and  prediccion[0,j]<=0.95:
+                listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar (Muy posible aprobar con una califcacion de 12 o mas \U0001F604)')
+            elif prediccion[0,j]>=0.95:
+                listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar (Muy posible aprobar con una califcacion de 14 o mas \U0001F973)')
+        else:
             listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar')
-        elif prediccion[0,j]>=0.8 and  prediccion[0,j]<=0.95:
-            listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar (Muy posible aprobar con una califcacion de 12 o mas)')
-        elif prediccion[0,j]>=0.95:
-            listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar (Muy posible aprobar con una califcacion de 14 o mas)')
 
 
     return listaaux
@@ -498,3 +510,236 @@ def ulttrim(xx):
             ultitrim=i
     print(ultitrim)
     return ultitrim
+
+def buscarprelaciones(xx,x2,materia,materiasqueprelan):
+    prelaciones=False
+    for i in range(materiasqueprelan.shape[0]):
+        for j in range(xx.shape[0]):
+            for k in range(xx.shape[1]):
+                if xx[j,k]==materiasqueprelan[i] and  x2[j,k]>=10:
+                    materiasqueprelan[i]=0
+    if np.count_nonzero(materiasqueprelan==0)==materiasqueprelan.shape[0]:
+        prelaciones=True
+    return prelaciones
+
+def contarcreditos(xx,x2):
+    creditos=0
+    for i in range(xx.shape[0]):
+        for j in range(xx.shape[1]):
+            if xx[i,j]!=0 and xx[i,j]!=59 and x2[i,j]>=10:
+                creditos=creditos+3
+    return creditos
+
+def contarcreditosBP(xx,x2):
+    creditos=0
+    listaBP=np.array([56,12,45,44,3,20,46,37,21,5,18,47,22,48,2,54,64,13,49,36,16])
+    for i in range(xx.shape[0]):
+        for j in range(xx.shape[1]):
+            if xx[i,j]!=0 and xx[i,j]!=59 and x2[i,j]>=10 and xx[i,j] in listaBP:
+                creditos=creditos+3
+    return creditos
+
+def prelaciones(xx,x2,materias):
+    error=False
+    creditos=contarcreditos(xx,x2)
+    creditosBP=contarcreditosBP(xx,x2)
+    for i in range(materias.shape[0]):
+        if  int(materias[i])!=0:
+            if int(materias[i])==42:
+                prela=np.array([43])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==8:
+                prela=np.array([40])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==66:
+                prela=np.array([67])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==4:
+                prela=np.array([7])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==45 or int(materias[i])==12 or int(materias[i])==56:
+                prela=np.array([42])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==35:
+                prela=np.array([66])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==46 or int(materias[i])==44:
+                prela=np.array([45])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==37:
+                prela=np.array([56])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==20:
+                prela=np.array([35,45])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==47:
+                prela=np.array([46])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==3:
+                prela=np.array([45])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==21:
+                prela=np.array([20,46])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==47:
+                prela=np.array([46])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==2:
+                prela=np.array([44,47])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==18 or int(materias[i])==5:
+                prela=np.array([3])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==23:
+                prela=np.array([22])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==13:
+                prela=np.array([48])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==62 or int(materias[i])==6:
+                prela=np.array([18])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==54:
+                prela=np.array([5])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==36:
+                prela=np.array([22])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==49:
+                prela=np.array([48])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==52:
+                prela=np.array([13])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==64:
+                prela=np.array([54])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==63:
+                prela=np.array([21])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==33:
+                prela=np.array([7])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False or creditos<105 :
+                    error=True
+            if int(materias[i])==53:
+                prela=np.array([52])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==25:
+                prela=np.array([6,62])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==1:
+                prela=np.array([6,62])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==16:
+                prela=np.array([47])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==58:
+                prela=np.array([63])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==59:
+                prela=np.array([57])
+                prela2=np.array([41])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                boolea2 = buscarprelaciones(xx,x2,materia,prela2)
+                if boolea == False and boolea2 == False:
+                    error=True
+            if int(materias[i])==57 or int(materias[i])==41:
+                if creditos<75:
+                    error=True
+            if int(materias[i])==65 or int(materias[i])==26 or int(materias[i])==27 or int(materias[i])==55:
+                if creditos<120:
+                    error=True
+            if int(materias[i])==24:
+                prela=np.array([52])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==50:
+                prela=np.array([53])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==60:
+                prela=np.array([16])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==51:
+                prela=np.array([16])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==23:
+                prela=np.array([62])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==10 or int(materias[i])==11 :
+                prela=np.array([62])
+                boolea = buscarprelaciones(xx,x2,materia,prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            
+            
+            
+    return error
+    

@@ -6,7 +6,7 @@
 <head>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}" />
-	
+
 
 	<script type="text/javascript">
 		function mostrarMat() {
@@ -37,6 +37,19 @@
 			}
 		}
 	</script>
+	<script type="text/javascript">
+
+		updateList = function () {
+			var input = document.getElementById('file');
+			var output = document.getElementById('fileList');
+			var children = "";
+			for (var i = 0; i < input.files.length; i++) {
+				children += '<li>' + input.files.item(i).name + '</li>';
+			}
+			output.innerHTML = '<ul>' + children + '</ul>';
+		}
+
+	</script>
 </head>
 
 <body>
@@ -56,15 +69,12 @@
 			{% endwith %}
 		</p>
 
-		<form method="post" action="/" enctype="multipart/form-data" >
+		<form method="post" action="/" enctype="multipart/form-data">
 			<dl>
 				<p>
-					
-						
-						<input type="file" name="file" id="file" class="inputfile" autocomplete="off" required />
-						<label for="file">Seleccionar Historico</label>
-					
-					
+					<input type="file" name="file" id="file" class="inputfile" autocomplete="off" required onchange="updateList()" />
+					<label for="file">Seleccionar Historico</label>
+					<div id="fileList"></div>
 				</p>
 			</dl>
 	</fieldset>
@@ -80,7 +90,8 @@
 
 				<input type="number" min="1" max="7" name="mataPredecir" id="mataPredecir" required>
 				<p>
-					<input type="button" value="Aceptar" class="w3-button w3-black w3-round-xlarge"  onclick="javascript:mostrarMat()">
+					<input type="button" value="Aceptar" class="w3-button w3-black w3-round-xlarge"
+						onclick="javascript:mostrarMat()">
 				</p>
 
 				<div id="idmat1" style="display: none;">
@@ -673,7 +684,8 @@
 				}
 			</script>
 			<p>
-				<input id="submit" type="submit" value="Ver Materias" class="w3-button w3-green w3-round-xlarge"  onclick="ObtenerMaterias()">
+				<input id="submit" type="submit" value="Ver Materias" class="w3-button w3-green w3-round-xlarge"
+					onclick="ObtenerMaterias()">
 			</p>
 		</p>
 	</fieldset>
