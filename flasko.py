@@ -243,7 +243,7 @@ def errormatrepe2():
 
 @app.route('/errorprelaciones')
 def errorprel1():
-	return render_template('materiasrepe.html')
+	return render_template('errorpre.html')
 @app.route('/errorprelaciones', methods=['POST'])
 def errorprel2():
 	if request.method == 'POST':
