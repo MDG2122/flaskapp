@@ -4,7 +4,7 @@ from flask import Flask, flash, request, redirect, render_template, url_for,sess
 from werkzeug.utils import secure_filename
 import pandas as pd
 from datos import listacodigos,codigosynbombres
-from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred,incluirreti,darprediccion,validar1,validar2,validar3,validar4,validar5,darprediccion2,ulttrim
+from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred,incluirreti,darprediccion,validar1,validar2,validar3,validar4,validar5,darprediccion2,ulttrim,prelaciones
 import json
 import numpy as np
 #os.environ['TIKA_SERVER_JAR'] = 'https://repo1.maven.org/maven2/org/apache/tika/tika-server/1.19/tika-server-1.19.jar'
@@ -125,7 +125,8 @@ def upload_file():
 			xx,x2=buscar3(hist,listacodigos,metadata,codigosynbombres)
 			todaspasadas=validar1(xx,pred,x2)
 			matrepe=validar2(pred)
-			if todaspasadas and matrepe==False :
+			prelacioness=prelaciones(xx,x2,pred)
+			if todaspasadas and matrepe==False and prelacioness==False:
 				xx=incluirpred(xx,pred)
 
 				#x2=cambiarformato(x2)
@@ -157,6 +158,9 @@ def upload_file():
 				return redirect(url_for('.errormatapro1'))
 			elif matrepe==True :
 				return redirect(url_for('.errormatrepe1'))
+			elif prelacioness==True:
+				return redirect(url_for('.errorprel1'))
+
 
 		else:
 			flash('Allowed file is  pdf')
@@ -234,6 +238,14 @@ def errormatrepe1():
 	return render_template('materiasrepe.html')
 @app.route('/materiarepetida', methods=['POST'])
 def errormatrepe2():
+	if request.method == 'POST':
+		return redirect(url_for('.upload_file'))
+
+@app.route('/errorprelaciones')
+def errorprel1():
+	return render_template('errorpre.html')
+@app.route('/errorprelaciones', methods=['POST'])
+def errorprel2():
 	if request.method == 'POST':
 		return redirect(url_for('.upload_file'))
 
