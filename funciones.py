@@ -93,14 +93,24 @@ def buscar3(historico, codigosmateria, metadata, codigosynbombres):
                                                                                                          historico[posiactual] == 'APRO' or historico[posiactual] == 'CONT' or
                                                                                                          historico[posiactual] == 'REPR' or historico[posiactual] == 'NOT'):
 
-                                if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2:
-                                    if int(historico[posiactual])!=0:
+                                if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2 and historico[posiactual-3]!='ELEMENTOS':
+                                    if historico[posiactual]!=0:
                                         # print(historico[posiactual])
                                         nota = historico[posiactual]
                                         esnota = True
                                         x2[fila][columna] = nota
                                     else:
-                                        nota=0.01
+                                        nota = 0.01
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                elif historico[posiactual].isdigit() and len(historico[posiactual]) <= 2 and historico[posiactual-3]=='ELEMENTOS':
+                                    if historico[posiactual]!=0:
+                                        # print(historico[posiactual])
+                                        nota = historico[posiactual+1]
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                    else:
+                                        nota = 0.01
                                         esnota = True
                                         x2[fila][columna] = nota
 
@@ -163,14 +173,24 @@ def buscar3(historico, codigosmateria, metadata, codigosynbombres):
                                                                                                          historico[posiactual] == 'APRO' or historico[posiactual] == 'CONT' or
                                                                                                          historico[posiactual] == 'REPR' or historico[posiactual] == 'NOT'):
 
-                                if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2:
-                                    if int(historico[posiactual])!=0:
+                                if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2 and historico[posiactual-3]!='ELEMENTOS':
+                                    if historico[posiactual]!=0:
                                         # print(historico[posiactual])
                                         nota = historico[posiactual]
                                         esnota = True
                                         x2[fila][columna] = nota
                                     else:
-                                        nota=0.01
+                                        nota = 0.01
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                elif historico[posiactual].isdigit() and len(historico[posiactual]) <= 2 and historico[posiactual-3]=='ELEMENTOS':
+                                    if historico[posiactual]!=0:
+                                        # print(historico[posiactual])
+                                        nota = historico[posiactual+1]
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                    else:
+                                        nota = 0.01
                                         esnota = True
                                         x2[fila][columna] = nota
 
