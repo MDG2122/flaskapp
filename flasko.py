@@ -4,7 +4,7 @@ from flask import Flask, flash, request, redirect, render_template, url_for,sess
 from werkzeug.utils import secure_filename
 import pandas as pd
 from datos import listacodigos,codigosynbombres
-from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred,incluirreti,darprediccion,validar1,validar2,validar3,validar4,validar5,darprediccion2,ulttrim,prelaciones
+from funciones import ordenarmenoramayor,buscar3,cambiarformato,imprimirtrimestres,obtenernummat,incluirpred,incluirreti,darprediccion,validar1,validar2,validar3,validar4,validar5,darprediccion2,ulttrim,prelaciones,validarprelacionesretir
 import json
 import numpy as np
 #os.environ['TIKA_SERVER_JAR'] = 'https://repo1.maven.org/maven2/org/apache/tika/tika-server/1.19/tika-server-1.19.jar'
@@ -188,7 +188,8 @@ def prueba2():
 		retimasde7=validar3(xx,retiradas)
 		retirepe=validar4(retiradas)
 		retiyaapro=validar5(xx,retiradas,x2)
-		if retimasde7==False and retirepe==False and retiyaapro==False:
+		prelareti=validarprelacionesretir(retiradas,xx,x2)
+		if retimasde7==False and retirepe==False and retiyaapro==False and prelareti==False:
 			x1,x2=incluirreti(xx,x2,retiradas)
 			x1,x2=ordenarmenoramayor(xx,x2)
 			lista=imprimirtrimestres(x1,metadata,x2)
@@ -212,6 +213,9 @@ def prueba2():
 			return redirect(url_for('.errorretover1'))
 		elif retiyaapro:
 			return redirect(url_for('.errorretyaapr1'))
+		elif prelareti:
+			return redirect(url_for('.errorretipre1'))
+
 
 
 
@@ -275,6 +279,17 @@ def errorretyaapr1():
 def errorretyaapr2():
 	if request.method == 'POST':
 		return redirect(url_for('.prueba'))
+
+
+
+@app.route('/retiradasprelacioneserror')
+def errorretipre1():
+	return render_template('retiprela.html')
+@app.route('/retiradasprelacioneserror', methods=['POST'])
+def errorretipre2():
+	if request.method == 'POST':
+		return redirect(url_for('.prueba'))
+
 
 if __name__ == '__main__':  
     app.run(debug = True)
