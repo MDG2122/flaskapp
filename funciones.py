@@ -93,14 +93,24 @@ def buscar3(historico, codigosmateria, metadata, codigosynbombres):
                                                                                                          historico[posiactual] == 'APRO' or historico[posiactual] == 'CONT' or
                                                                                                          historico[posiactual] == 'REPR' or historico[posiactual] == 'NOT'):
 
-                                if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2:
-                                    if int(historico[posiactual])!=0:
+                                if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2 and historico[posiactual-3]!='ELEMENTOS':
+                                    if historico[posiactual]!=0:
                                         # print(historico[posiactual])
                                         nota = historico[posiactual]
                                         esnota = True
                                         x2[fila][columna] = nota
                                     else:
-                                        nota=0.01
+                                        nota = 0.01
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                elif historico[posiactual].isdigit() and len(historico[posiactual]) <= 2 and historico[posiactual-3]=='ELEMENTOS':
+                                    if historico[posiactual]!=0:
+                                        # print(historico[posiactual])
+                                        nota = historico[posiactual+1]
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                    else:
+                                        nota = 0.01
                                         esnota = True
                                         x2[fila][columna] = nota
 
@@ -163,14 +173,24 @@ def buscar3(historico, codigosmateria, metadata, codigosynbombres):
                                                                                                          historico[posiactual] == 'APRO' or historico[posiactual] == 'CONT' or
                                                                                                          historico[posiactual] == 'REPR' or historico[posiactual] == 'NOT'):
 
-                                if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2:
-                                    if int(historico[posiactual])!=0:
+                                if historico[posiactual].isdigit() and len(historico[posiactual]) <= 2 and historico[posiactual-3]!='ELEMENTOS':
+                                    if historico[posiactual]!=0:
                                         # print(historico[posiactual])
                                         nota = historico[posiactual]
                                         esnota = True
                                         x2[fila][columna] = nota
                                     else:
-                                        nota=0.01
+                                        nota = 0.01
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                elif historico[posiactual].isdigit() and len(historico[posiactual]) <= 2 and historico[posiactual-3]=='ELEMENTOS':
+                                    if historico[posiactual]!=0:
+                                        # print(historico[posiactual])
+                                        nota = historico[posiactual+1]
+                                        esnota = True
+                                        x2[fila][columna] = nota
+                                    else:
+                                        nota = 0.01
                                         esnota = True
                                         x2[fila][columna] = nota
 
@@ -751,3 +771,233 @@ def prelaciones(xx,x2,materias):
             
     return error
     
+def prelacionesRetiradas(xx,x2,materias,trim):
+    materias=materias
+    materias=np.asarray([materias])
+    error=False
+    if trim != 1:
+        xxnew=xx[0:trim-1]
+        x2new=x2[0:trim-1]
+    else:
+        xxnew=np.array([[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]])
+        x2new=np.array([[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]])
+        
+    creditos=contarcreditos(xxnew,x2new)
+    creditosBP=contarcreditosBP(xxnew,x2new)
+    for i in range(materias.shape[0]):
+        if  int(materias[i])!=0:
+            if int(materias[i])==42:
+                prela=np.array([43])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==8:
+                prela=np.array([40])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==66:
+                prela=np.array([67])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==4:
+                prela=np.array([7])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==45 or int(materias[i])==12 or int(materias[i])==56:
+                prela=np.array([42])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==35:
+                prela=np.array([66])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==46 or int(materias[i])==44:
+                prela=np.array([45])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==37:
+                prela=np.array([56])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==20:
+                prela=np.array([35,45])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==47:
+                prela=np.array([46])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==3:
+                prela=np.array([45])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==21:
+                prela=np.array([20,46])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==22:
+                prela=np.array([21])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==47:
+                prela=np.array([46])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==2:
+                prela=np.array([44,47])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==18 or int(materias[i])==5:
+                prela=np.array([3])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==23:
+                prela=np.array([22])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==13:
+                prela=np.array([48])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==62 or int(materias[i])==6:
+                prela=np.array([18])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==54:
+                prela=np.array([5])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==36:
+                prela=np.array([22])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==49:
+                prela=np.array([48])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==52:
+                prela=np.array([13])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==64:
+                prela=np.array([54])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==63:
+                prela=np.array([21])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==33:
+                prela=np.array([7])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False or creditos<105 :
+                    error=True
+            if int(materias[i])==53:
+                prela=np.array([52])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==25:
+                prela=np.array([6,62])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==1:
+                prela=np.array([6,62])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==16:
+                prela=np.array([47])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==58:
+                prela=np.array([63])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False:
+                    error=True
+            if int(materias[i])==59:
+                prela=np.array([57])
+                prela2=np.array([41])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                boolea2 = buscarprelaciones(xxnew,x2new,materias[i],prela2)
+                if boolea == False and boolea2 == False:
+                    error=True
+            if int(materias[i])==57 or int(materias[i])==41:
+                if creditos<75:
+                    error=True
+            if int(materias[i])==65 or int(materias[i])==26 or int(materias[i])==27 or int(materias[i])==55:
+                if creditos<120:
+                    error=True
+            if int(materias[i])==24:
+                prela=np.array([52])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==50:
+                prela=np.array([53])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==60:
+                prela=np.array([16])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==51:
+                prela=np.array([16])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==23:
+                prela=np.array([62])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            if int(materias[i])==10 or int(materias[i])==11 :
+                prela=np.array([62])
+                boolea = buscarprelaciones(xxnew,x2new,materias[i],prela)
+                if boolea == False and creditosBP<57:
+                    error=True
+            
+            
+            
+    return error
+
+def validarprelacionesretir(retiradas,xx,x2):
+    retiradas = retiradas.split(",")
+    retiradas=np.asarray(retiradas)
+    error1=False
+    for i in range(retiradas.shape[0]):
+        if i%2==0 or i==0 and i<=retiradas.shape[0]-1:
+            if int(retiradas[i+1])!=0:
+                error2=prelacionesRetiradas(xx,x2,int(retiradas[i+1]),int(retiradas[i]))
+                if error2 == True:
+                    error1 = True
+
+    return error1
