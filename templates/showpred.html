@@ -10,6 +10,47 @@
 
 <body class="center">
   <form method='post' action="/prediccion">
+    
+<table >
+  <tr>
+    <th>Indice de efectividad</th>
+    <th>Significado</th>
+  </tr>
+  <tr>
+
+    <td>Entre 0 y 50</td>
+
+    <td>Alta probabilidad de reprobar</td>
+
+  </tr>
+  <tr>
+
+    <td>Entre 50 y 80</td>
+
+    <td>Alta probabilidad de aprobar</td>
+
+  </tr>
+  <tr>
+
+    <td>Entre 80 y 95</td>
+
+    <td>Alta probabilidad de aprobar con una nota de 12 o mas</td>
+
+  </tr>
+  <tr>
+
+    <td>Entre 95 y 100</td>
+
+    <td>Alta probabilidad de aprobar con una nota de 14 o mas</td>
+
+  </tr>
+
+
+
+</table>
+
+    <br>
+    <br>
     <br>
     Resultados
     {% if pred[0] %}

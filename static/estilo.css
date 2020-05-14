@@ -89,3 +89,17 @@ h2{
     transform: translateY(-50%);
     
   }
+
+table{
+    width: 75%;
+    margin: 0 auto;
+    
+}
+td,th {
+    text-align: center;
+    color: white;
+    background-color: #021C1E;
+    height: 40px;
+}
+
+tr:hover {background-color: grey;}

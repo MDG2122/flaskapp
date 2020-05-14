@@ -416,13 +416,13 @@ def darprediccion(xx,metadata,x3,prediccion):
     for j in range(7-nummaterias,7):
         if ultimotrim[j] not in listamatenonum:
             if prediccion[0,j]<=0.8:
-                listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar')
+                listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', Indice de Efectividad de '+str(round(prediccion[0,j]*100,2))+' ')
             elif prediccion[0,j]>=0.8 and  prediccion[0,j]<=0.95:
-                listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar (Muy posible aprobar con una califcacion de 12 o mas \U0001F604)')
+                listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', Indice de Efectividad de '+str(round(prediccion[0,j]*100,2))+' ')
             elif prediccion[0,j]>=0.95:
-                listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar (Muy posible aprobar con una califcacion de 14 o mas \U0001F973)')
+                listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', Indice de Efectividad de '+str(round(prediccion[0,j]*100,2))+' ')
         else:
-            listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', '+str(round(prediccion[0,j]*100,2))+'% Probabilidad de Aprobar')
+            listaaux.append(''+str(metadata.iloc[int(ultimotrim[j]-1)][0])+', Indice de Efectividad de '+str(round(prediccion[0,j]*100,2))+' ')
 
 
     return listaaux
