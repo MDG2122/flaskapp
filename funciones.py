@@ -31,7 +31,7 @@ def buscar3(historico, codigosmateria, metadata, codigosynbombres):
         posicionperiodosiguiente = -1
         contadorvecesmismoperiodo = 1
         # llevarcuenta=-1
-        if historico[i] == 'Período' and historico[i+1] != 'N' and historico[i+1] != llevarcuenta:
+        if historico[i] == 'Período' and historico[i+1] != 'N' and historico[i+2] != 'Admision' and historico[i+1] != llevarcuenta:
             posicionperiodoactual = i
             encontrado = False
             estoyen = i
