@@ -1,1 +1,1 @@
-web: Flask flasko:transformersunimet
+web: gunicorn flasko:transformersunimet
