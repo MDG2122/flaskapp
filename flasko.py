@@ -144,7 +144,7 @@ def upload_file():
 				session['matynotas'] = matynotas
 				session['trimfinal'] = trimfinal
 				#print(x3)
-				return redirect(url_for('.prueba', matynotas=matynotas,trimfinal=trimfinal, json_dump=json_dump))
+				return redirect(url_for('.prueba'))
 				#prueba(xx,x2,matynotas)
 				#if request.method == 'POST':
 
