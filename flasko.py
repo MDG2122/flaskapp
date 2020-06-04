@@ -174,8 +174,6 @@ def prueba():
 	return render_template('showdata1.html',matynotas=matynotas,trimfinal=trimfinal)
 
 
-
-
 @app.route('/materias', methods=['POST'])
 def prueba2():
 	if request.method == 'POST':
@@ -204,7 +202,7 @@ def prueba2():
 			x1=np.reshape(x1,(23,7))
 			predi=darprediccion(x1,metadata,x3,pred)
 			session['prediccion'] = predi
-			return redirect(url_for('.predi1',pred=predi))
+			return redirect(url_for('.predi1'))
 			#return render_template('/showpred.html',pred=predi)
 		elif retimasde7 :
 			#return render_template('retioverflow.html')
