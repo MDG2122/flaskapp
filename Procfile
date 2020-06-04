@@ -1,1 +1,1 @@
-web:Flask flasko:app
+web: Flask flasko:transformersunimet
