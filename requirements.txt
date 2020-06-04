@@ -11,7 +11,7 @@ keras-multi-head==0.22.0
 Keras-Preprocessing==1.1.0
 keras-self-attention==0.41.0
 numpy==1.10.0
-pandas=0.25.0
+pandas=1.0.1
 tensorflow==1.15.0
 tensorflow-estimator==1.15.1
 tika==1.23
