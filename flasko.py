@@ -11,7 +11,7 @@ import numpy as np
 import tika
 tika.initVM()
 from tika import parser
-from tensorflow import keras
+import keras
 from keras.models import load_model
 from keras_multi_head import MultiHeadAttention
 from keras_layer_normalization import LayerNormalization
