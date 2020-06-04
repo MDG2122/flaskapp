@@ -1,7 +1,7 @@
 Flask==1.1.1
 Flask-JSON==0.3.4
 gunicorn==19.0.0
-Java==1.18.
+Java==14.0.1
 Jinja2==2.11.1
 json5==0.9.3
 jsonschema==3.2.0
