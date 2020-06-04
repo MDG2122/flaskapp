@@ -13,6 +13,7 @@ keras-self-attention==0.41.0
 numpy==1.18.1
 pandas==1.0.1
 tensorflow==1.14.0
+tensorflow-estimator==1.14.0
 tika==1.23
 urllib3==1.25.8
 Werkzeug==0.16.1
