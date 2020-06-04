@@ -194,7 +194,7 @@ def prueba2():
 			matynotas = lista
 			x1=np.reshape(x1,(1,23*7))
 			x2=np.reshape(x2,(1,23*7,1))
-			x3=np.reshape(x3,((1,7)))\
+			x3=np.reshape(x3,((1,7)))
 			
 
 			model = load_model('model07361acc.h5',custom_objects={'MultiHeadAttention': MultiHeadAttention,'LayerNormalization':LayerNormalization,'NonMasking':NonMasking})
