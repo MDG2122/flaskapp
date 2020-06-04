@@ -16,7 +16,7 @@ from keras.models import load_model
 from keras_multi_head import MultiHeadAttention
 from keras_layer_normalization import LayerNormalization
 from keras.layers import *
-import tensorflow as tf
+#import tensorflow as tf
 '''from tensorflow.python.keras.backend import set_session
 from tensorflow.python.keras.models import load_model'''
 from keras import backend as K
