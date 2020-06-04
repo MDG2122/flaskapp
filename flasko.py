@@ -19,8 +19,8 @@ from keras.layers import *
 #import tensorflow as tf
 '''from tensorflow.python.keras.backend import set_session
 from tensorflow.python.keras.models import load_model'''
-from keras import backend as K
-K.set_session
+'''from keras import backend as K
+K.set_session'''
 
 #import numpy as np
 metadata =pd.read_csv('static/metadata.csv',header=None)
