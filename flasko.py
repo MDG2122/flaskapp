@@ -197,10 +197,11 @@ def prueba2():
 			x3=np.reshape(x3,((1,7)))
 			
 
-			model = load_model('model07361acc.h5',custom_objects={'MultiHeadAttention': MultiHeadAttention,'LayerNormalization':LayerNormalization,'NonMasking':NonMasking})
-			pred=model.predict({'inputA':x1,'inputB':x2})
+			'''model = load_model('model07361acc.h5',custom_objects={'MultiHeadAttention': MultiHeadAttention,'LayerNormalization':LayerNormalization,'NonMasking':NonMasking})
+			pred=model.predict({'inputA':x1,'inputB':x2})'''
 			x1=np.reshape(x1,(23,7))
-			predi=darprediccion(x1,metadata,x3,pred)
+			#predi=darprediccion(x1,metadata,x3,pred)
+			predi=['aaaaaaaaaa']
 			session['prediccion'] = predi
 			return redirect(url_for('.predi1'))
 			#return render_template('/showpred.html',pred=predi)
