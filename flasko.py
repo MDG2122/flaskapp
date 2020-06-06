@@ -16,7 +16,7 @@ from keras.models import load_model
 from keras_multi_head import MultiHeadAttention
 from keras_layer_normalization import LayerNormalization
 from keras.layers import *
-#import tensorflow as tf
+import tensorflow as tf
 '''from tensorflow.python.keras.backend import set_session
 from tensorflow.python.keras.models import load_model'''
 '''from keras import backend as K
@@ -58,6 +58,8 @@ class NonMasking(Layer):
   
     def get_output_shape_for(self, input_shape):   
         return input_shape
+
+
 
 
 
@@ -195,10 +197,12 @@ def prueba2():
 			x1=np.reshape(x1,(1,23*7))
 			x2=np.reshape(x2,(1,23*7,1))
 			x3=np.reshape(x3,((1,7)))
-			
+			global graph
+			graph = tf.get_default_graph()
+			model= load_model('model07361acc.h5',custom_objects={'MultiHeadAttention': MultiHeadAttention,'LayerNormalization':LayerNormalization,'NonMasking':NonMasking})
 
-			model = load_model('model07361acc.h5',custom_objects={'MultiHeadAttention': MultiHeadAttention,'LayerNormalization':LayerNormalization,'NonMasking':NonMasking})
-			pred=model.predict({'inputA':x1,'inputB':x2})
+			with graph.as_default():
+				pred=model.predict({'inputA':x1,'inputB':x2})
 			x1=np.reshape(x1,(23,7))
 			predi=darprediccion(x1,metadata,x3,pred)
 			session['prediccion'] = predi
