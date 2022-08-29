@@ -13,3 +13,7 @@ Members:
 -Mario Catapano
 
 -Massimo Di Gennaro
+
+-Academic Tutor: Nicolas Araque Volk
+
+
